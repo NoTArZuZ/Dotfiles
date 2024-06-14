@@ -23,8 +23,30 @@ cd ~/Dotfiles
 stow --adopt .
 ```
 
+And then reboot!
+
 > [!IMPORTANT]
 > There's also xfce4 installed. So choose "none+qtile" in lightdm (if you not turned it off).
+
+## Keybinds:
+
+| Keys                 | Description                            |
+| -------------------- | -------------------------------------- |
+| Super + Enter        | Launch st                              |
+| Super + w            | Kill focused window                    |
+| Super + ctrl + q     | Shutdown qtile                         |
+| Super + ctrl + r     | Reload qtile config                    |
+| Super + Tab          | Cycle qtile layouts                    |
+| Super + 1-5          | Switch to workspace                    |
+| Super + Shift + 1-5  | Move window to workspace               |
+| Super + hjkl         | Move focus right down up left          |
+| Super + Shift + hjkl | Move focused window right down up left |
+| Super + t            | Toggle window floating                 |
+| Super + e            | Launch st with ranger                  |
+| Super + b            | Launch firefox                         |
+| Super + r            | Launch dmenu_run                       |
+| Super + g            | Launch dmenu script hub                |
+| and more!            | See config.py                          |
 
 ## Installed packages:
 
