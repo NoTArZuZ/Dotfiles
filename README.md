@@ -1,15 +1,22 @@
 # Dotfiles
-NoTArZuZ's dotfiles for NixOS
+NoTArZuZ's dotfiles for NixOS 24.05
 
 ## Installation:
 
-> [!CAUTION]
+> [!WARNING]
 > Configured for AMD CPU and AMD GPU
 
 ```
 mv ~/Dotfiles/nix-cfg ~/nix-cfg
 cd nix-cfg
 sudo nixos-rebuild switch --flake .
+```
+
+After rebuilding NixOS:
+
+```
+cd ~/Dotfiles
+stow --adopt .
 ```
 
 ## Installed packages:
