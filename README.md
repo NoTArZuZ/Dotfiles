@@ -23,7 +23,8 @@ stow --adopt .
 
 | Package         | Description                                   |
 | --------------- | --------------------------------------------- |
-| qtile           | The best tiling WM ever IMO                   |
+| qtile (on X11)  | The best tiling WM ever IMO                   |
+| firefox         | Based web browser                             |
 | fish            | A shell without massive configs               |
 | helix           | Best editor IMO                               |
 | fastfetch       | Better than neofetch                          |
