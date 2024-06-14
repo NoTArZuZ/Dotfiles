@@ -23,6 +23,9 @@ cd ~/Dotfiles
 stow --adopt .
 ```
 
+> [!IMPORTANT]
+> There's also xfce4 installed. So choose "none+qtile" in lightdm (if you not turned it off).
+
 ## Installed packages:
 
 | Package         | Description                                   |
