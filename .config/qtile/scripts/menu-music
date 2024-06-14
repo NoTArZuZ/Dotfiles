@@ -1,0 +1,165 @@
+#!/usr/bin/env bash
+
+source ~/.config/qtile/vars
+
+set -euo pipefail
+
+trackplaystuff() {
+  trackchoose=$(printf "Insert to Queue\nAdd to Queue\nPlay only" | $menu "Choose:" -l 3)
+  case $trackchoose in
+    Insert\ to\ Queue)
+      tracktoplay=$(mpc listall | $menu "Track to add:" -l $(mpc listall | wc -l))
+      mpc -q insert "$tracktoplay"
+      mpc -q play
+      notify-send "Music Tool" "$tracktoplay Inserted in Queue"
+      exit 0
+    ;;
+    Add\ to\ Queue)
+      tracktoplay=$(mpc listall | $menu "Track to add:" -l $(mpc listall | wc -l))
+      mpc -q add "$tracktoplay"
+      mpc -q play
+      notify-send "Music Tool" "$tracktoplay Added to Queue"
+      exit 0
+    ;;
+    Play\ only)
+      tracktoplay=$(mpc listall | $menu "Track to play:" -l $(mpc listall | wc -l))
+      mpc -q clear
+      mpc -q add "$tracktoplay"
+      mpc -q play
+      notify-send "Music Tool" "Playing Only $tracktoplay"
+      exit 0
+    ;;
+    *)
+      exit 1
+    ;;
+  esac
+}
+
+listplaystuff() {
+  listchoose=$(printf "Load to Queue\nPlay only" | $menu "Choose:" -l 2)
+  case $listchoose in
+    Load\ to\ Queue)
+      listtoplay=$(mpc lsplaylists | $menu "Playlist to add:" -l $(mpc lsplaylists | wc -l))
+      mpc -q load "$listtoplay"
+      mpc -q play
+      notify-send "Music Tool" "$listtoplay Loaded to Queue"
+      exit 0
+    ;;
+    Play\ only)
+      listtoplay=$(mpc lsplaylists | $menu "Playlist to play:" -l $(mpc lsplaylists | wc -l))
+      mpc -q clear
+      mpc -q load "$listtoplay"
+      mpc -q play
+      notify-send "Music Tool" "Playing Only $listtoplay"
+      exit 0
+    ;;
+    *)
+      exit 1
+    ;;
+  esac
+}
+
+playstuff() {
+  toplay=$(printf "Track\nPlaylist\nNext\nPrev" | $menu "Play:" -l 4)
+  case $toplay in
+    Track)
+      trackplaystuff
+    ;;
+    Playlist)
+      listplaystuff
+    ;;
+    Next)
+      notify-send "Music Tool" "Next Track is $(mpc queued)"
+      mpc -q next
+    ;;
+    Prev)
+      mpc -q prev
+      notify-send "Music Tool" "Prev Track is $(mpc current)"
+    ;;
+    *)
+      exit 1
+    ;;
+  esac
+}
+
+settingsmpd() {
+  settingschoose=$(printf "Volume\nList\nSeek\nDelete track\nMove track\nClear\nSingle\nRandom\nRepeat\nConsume\nShuffle" | $menu "Choose:" -l 11)
+  case $settingschoose in
+    Volume)
+      changevol=$(echo "" | $menu "Volume from 0 - 100:")
+      mpc -q volume $changevol
+      notify-send "Music Tool" "Changed Volume to $changevol"
+    ;;
+    List)
+      notify-send "Music Tool" "$(mpc playlist)"
+    ;;
+    Seek)
+      timetoseek=$(echo "" | $menu "Time to seek:")
+      mpc -q seek $timetoseek
+      notify-send "Music Tool" "Seeked to $timetoseek"
+    ;;
+    Delete\ track)
+      trackpos=$(mpc playlist | $menu "Position number:" -l $(mpc playlist | wc -l))
+      mpc -q del $trackpos
+      notify-send "Music Tool" "Deleted Track $trackpos"
+    ;;
+    Move\ track)
+      trackposfrom=$(mpc playlist | $menu "Move from position number:" -l $(mpc playlist | wc -l))
+      trackposto=$(mpc playlist | $menu "Move from position number:" -l $(mpc playlist | wc -l))
+      mpc -q move $trackposfrom $trackposto
+      notify-send "Music Tool" "Moved Track $trackposfrom to $trackposto"
+    ;;
+    Clear)
+      mpc -q clear
+      notify-send "Music Tool" "Cleared Playlist"
+    ;;
+    Single)
+      mpc -q single
+      notify-send "Music Tool" "Toggled Single"
+    ;;
+    Random)
+      mpc -q random
+      notify-send "Music Tool" "Toggled Random"
+    ;;
+    Repeat)
+      mpc -q repeat
+      notify-send "Music Tool" "Toggled Repeat"
+    ;;
+    Consume)
+      mpc -q consume
+      notify-send "Music Tool" "Toggled Consume"
+    ;;
+    Shuffle)
+      mpc -q shuffle
+      notify-send "Music Tool" "Toggled Shuffle"
+    ;;
+    *)
+      exit 1
+    ;;
+  esac
+}
+
+choose=$(printf "Play\nToggle\nPlaylist\nStop\nTUI player" | $menu "Choose:" -l 5)
+case $choose in
+  Play)
+    playstuff
+  ;;
+  Toggle)
+    mpc -q toggle
+    notify-send "Music Tool" "Toggled Play/Pause"
+  ;;
+  Playlist)
+    settingsmpd
+  ;;
+  Stop)
+    mpc -q stop
+    notify-send "Music Tool" "Stopped"
+  ;;
+  TUI\ player)
+    notify-send "Music Tool" "Launched $mustui"
+    $term $mustui
+  ;;
+  *)
+    exit 1
+  ;;
+esac

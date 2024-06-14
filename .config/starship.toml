@@ -1,0 +1,29 @@
+format = '''
+[┌─|$username$custom$hostname $shell|─|$time|─> $directory$cmd_duration](bold white)
+[└─$character$status](bold white)'''
+
+[character]
+success_symbol = '[\$](bold green)'
+error_symbol = '[\$](bold red)'
+
+[username]
+format = "[$user](bold blue)[@](bold green)"
+show_always = true
+
+[hostname]
+ssh_only = false
+format = '[$hostname](bold purple)'
+
+[time]
+format = "[$time](bold yellow)"
+disabled = false
+
+[cmd_duration]
+style = "bold red"
+
+[status]
+disabled = false
+
+[shell]
+disabled = false
+format = "via [$indicator](bold red)"

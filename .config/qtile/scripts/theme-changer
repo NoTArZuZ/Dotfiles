@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+source ~/.config/qtile/vars
+
+set -euo pipefail
+
+# this thing gonna be MASSIVE
+# for now qtile, xresources (gtk through home-manager) is supported
+
+dontdoit() {
+choose1=$(printf "Toggle Theme\nChange Theme" | $menu "Choose:" -l 2)
+case $choose1 in
+  Toggle\ Theme)
+  if [ $themecol == "dark" ]; then
+    # make colors dark
+  else
+    # make colors light
+  fi
+# OMG sed i fucking love sed my lifestyle is sed
+  if [ $themecol == "dark" ]; then
+    sed -i '/^themecol="dark"/c\themecol="light"' $HOME/.config/qtile/vars
+  else
+    sed -i '/^themecol="light"/c\themecol="dark"' $HOME/.config/qtile/vars
+  fi
+  ;;
+  Change\ Theme)
+  choose2=$(printf "$themes" | $menu "Choose:" -l $(printf "$themes\n" | wc -l))
+  ;;
+  *)
+  exit 1
+  ;;
+esac
+}
+
+printf "no way\n"

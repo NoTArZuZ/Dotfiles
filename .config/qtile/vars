@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+# DO NOT MOVE OR RENAME THIS FILE
+
+# default programs: qtile, st, dmenu, feh, nsxiv, colorpicker, xclip, maim, translate-shell, mpd with mpc and ncmpcpp, curl, yt-dlp, libnotify
+# feel free to change anything to your liking
+
+# one line programs
+term="st -e"
+menu="dmenu -bw 2 -c -p" # prompt at the end
+imgsetbg="feh --bg-scale"
+imgview="nsxiv -r -t -a -o" # recursive and output to stdout
+colpick="colorpicker --short --one-shot --preview" # outputs only hex
+mustui="ncmpcpp"
+ytdown="yt-dlp --ignore-config"
+cp2cb="xclip -r -selection clipboard"
+cp2cbimg="xclip -selection clipboard -t image/png"
+# directories
+musdir="$HOME/Music"
+bgdir="$HOME/Pictures/Wallpapers"
+scrshotdir="$HOME/Pictures/Screenshots"
+notedir="$HOME/Notes/" # / at the end
+scrdir="$HOME/.config/qtile/scripts/" # / at the end
+# themes
+themes="Dracula\nWal" # please write your themes in this var (case sensitive)
+themecol="dark" # do not change this var

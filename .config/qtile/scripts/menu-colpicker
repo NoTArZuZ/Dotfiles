@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+
+source ~/.config/qtile/vars
+
+set -euo pipefail
+
+pick_color() {
+  color=$($colpick)
+  echo "$color" | $cp2cb
+  echo "$color" >> $HOME/.cache/colorpicklist
+  notify-send "Color Picker Tool" "Successfully Copied and Saved Color $color"
+  exit 0
+}
+
+list_colors() {
+  if [ -e $HOME/.cache/colorpicklist ]; then
+    color=$(cat $HOME/.cache/colorpicklist | $menu "Color to copy:" -l $(cat $HOME/.cache/colorpicklist | wc -l))
+    echo "$color" | $cp2cb
+    notify-send "Color Picker Tool" "Successfully Copied Color $color"
+    exit 0
+  else
+    notify-send "Color Picker Tool" "List not Created"
+    exit 1
+  fi
+}
+
+while test $# -gt 0; do
+  case "$1" in
+    -p)
+      pick_color
+    ;;
+    -l)
+      list_colors
+    ;;
+    *)
+      printf "[-p] - copy and save picked color\n[-l] - list saved colors\n"
+      exit 1
+    ;;
+  esac
+done
+
+choose=$(printf "Pick color\nList colors\nClean list" | $menu "Choose:" -l 3)
+case $choose in
+  Pick\ color)
+    pick_color
+  ;;
+  List\ colors)
+    list_colors
+  ;;
+  Clean\ list)
+    if [ -e $HOME/.cache/colorpicklist ]; then
+      rm $HOME/.cache/colorpicklist
+      notify-send "Color Picker Tool" "Successfully Cleaned List"
+    else
+      notify-send "Color Picker Tool" "List not Created"
+      exit 1
+    fi
+  ;;
+  *)
+    exit 1
+  ;;
+esac

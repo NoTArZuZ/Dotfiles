@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+
+source ~/.config/qtile/vars
+
+set -euo pipefail
+
+set_wallpaper() {
+  setwallpaper=$($imgview $bgdir)
+  $imgsetbg $setwallpaper
+  echo $setwallpaper > $HOME/.cache/wallcache
+  notify-send "Wallpaper Tool" "Changed wallpaper to $setwallpaper"
+}
+
+rand_wallpaper() {
+  setwallpaper=$(find $bgdir -type f | shuf -n 1)
+  $imgsetbg $setwallpaper
+  echo $setwallpaper > $HOME/.cache/wallcache
+  notify-send "Wallpaper Tool" "Changed wallpaper to $setwallpaper"
+}
+
+while test $# -gt 0; do
+  case "$1" in
+    -s)
+      set_wallpaper
+      exit 0
+    ;;
+    -r)
+      rand_wallpaper
+      exit 0
+    ;;
+    *)
+      printf "[-s] - set wallpaper [-r] - random wallpaper\n"
+      exit 1
+    ;;
+  esac
+done    
+
+
+choose=$(printf "Set Wallpaper\nRandom Wallpaper" | $menu "Choose:" -l 2)
+case $choose in
+  Set\ Wallpaper)
+    set_wallpaper
+  ;;
+  Random\ Wallpaper)
+    ilikerandom="Yes"
+    until [ "$ilikerandom" = "No" ]; do
+    rand_wallpaper
+    ilikerandom=$(printf "Yes\nNo" | $menu "Another one?" -l 2)
+    done
+  ;;
+  *)
+    exit 1
+  ;;
+esac

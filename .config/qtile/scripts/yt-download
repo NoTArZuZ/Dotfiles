@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+source ~/.config/qtile/vars
+
+set -euo pipefail
+
+choose=$(printf "Video\nAudio" | $menu "Download from yt:" -l 2)
+downdir=$(printf "~/Videos\n~/Music" | $menu "Download dir:" -l 2)
+case $choose in
+  Video)
+    videoformat=$(printf "mp4\nmkv\navi" | $menu "Audio format:" -l 3)
+    videolink=$(echo "" | $menu "Video link:")
+    $ytdown --remux $videoformat --merge $videoformat "$videolink" -P $downdir
+  ;;
+  Audio)
+    audioformat=$(printf "mp3\nvorbis\nwav" | $menu "Audio format:" -l 3)
+    videolink=$(echo "" | $menu "Video link:")
+    $ytdown -x --audio-format $audioformat "$videolink" -P $downdir
+  ;;
+  *)
+    exit 1
+  ;;
+esac

@@ -1,0 +1,10 @@
+theme = "base16_transparent"
+
+[editor]
+line-number = "relative"
+
+[editor.cursor-shape]
+insert = "bar"
+
+[editor.file-picker]
+hidden = true

@@ -1,0 +1,166 @@
+#!/usr/bin/env bash
+
+source ~/.config/qtile/vars
+
+set -euo pipefail
+
+monitorboth() {
+  maim | tee "$scrshotdir"/$(date +%s).png | $cp2cbimg
+  notify-send "Screenshot Tool" "Succesfully saved and copied Monitor screenshot"
+}
+
+monitorcopy() {
+  maim | $cp2cbimg
+  notify-send "Screenshot Tool" "Succesfully copied Monitor screenshot"
+}
+
+monitorfile() {
+  maim | tee "$scrshotdir"/$(date +%s).png
+  notify-send "Screenshot Tool" "Succesfully saved Monitor screenshot"
+}
+
+windowboth() {
+  maim -i $(xdotool getactivewindow) | tee "$scrshotdir"/$(date +%s).png | $cp2cbimg
+  notify-send "Screenshot Tool" "Succesfully saved and copied Window screenshot"
+}
+
+windowcopy() {
+  maim -i $(xdotool getactivewindow) | $cp2cbimg
+  notify-send "Screenshot Tool" "Succesfully copied Window screenshot"
+}
+
+windowfile() {
+  maim -i $(xdotool getactivewindow) | tee "$scrshotdir"/$(date +%s).png
+  notify-send "Screenshot Tool" "Succesfully saved Window screenshot"
+}
+
+areaboth() {
+  maim -s -u | tee "$scrshotdir"/$(date +%s).png | $cp2cbimg
+  notify-send "Screenshot Tool" "Succesfully saved and copied Area screenshot"
+}
+
+areacopy() {
+  maim -s -u | $cp2cbimg
+  notify-send "Screenshot Tool" "Succesfully copied Area screenshot"
+}
+
+areafile() {
+  maim -s -u | tee "$scrshotdir"/$(date +%s).png
+  notify-send "Screenshot Tool" "Succesfully saved Area screenshot"
+}
+
+browsescrshots() {
+  scrshotfile=$($imgview $scrshotdir)
+  if [ -z $scrshotfile ]; then
+    exit 0
+  else
+    cat $scrshotfile | $cp2cbimg
+    notify-send "Screenshot Tool" "Successfully copied $scrshotfile to clipboard"
+    exit 0
+  fi
+}
+
+scrshot() {
+choose1=$(printf "Monitor\nWindow\nArea" | $menu "Choose:" -l 3)
+choose2=$(printf "Both\nCopy to clipboard\nSave to file" | $menu "Choose:" -l 3)
+case $choose2 in
+  Both)
+     if [ $choose1 == "Monitor" ]; then
+       monitorboth
+     fi
+     if [ $choose1 == "Window" ]; then
+       windowboth
+     fi
+    if [ $choose1 == "Area" ]; then
+      areaboth
+    fi
+  ;;
+  Copy\ to\ clipboard)
+     if [ $choose1 == "Monitor" ]; then
+       monitorcopy
+     fi
+     if [ $choose1 == "Window" ]; then
+       windowcopy
+     fi
+    if [ $choose1 == "Area" ]; then
+      areacopy
+    fi
+  ;;
+  Save\ to\ file)
+     if [ $choose1 == "Monitor" ]; then
+       monitorfile
+     fi
+     if [ $choose1 == "Window" ]; then
+       windowfile
+     fi
+    if [ $choose1 == "Area" ]; then
+      areafile
+    fi
+  ;;
+  *)
+    exit 1
+  ;;
+esac
+}
+
+while test $# -gt 0; do
+  case "$1" in
+    -mb)
+      monitorboth
+      exit 0
+    ;;
+    -mc)
+      monitorcopy
+      exit 0
+    ;;
+    -mf)
+      monitorfile
+      exit 0
+    ;;
+    -wb)
+      windowboth
+      exit 0
+    ;;
+    -wc)
+      windowcopy
+      exit 0
+    ;;
+    -wf)
+      windowfile
+      exit 0
+    ;;
+    -ab)
+      areaboth
+      exit 0
+    ;;
+    -ac)
+      areacopy
+      exit 0
+    ;;
+    -af)
+      areafile
+      exit 0
+    ;;
+    -b)
+      browsescrshots
+    ;;
+    *)
+      printf "[-m] - monitor [-w] - window [-a] - area\n[-b] - save and copy [-c] - copy [-f] - save\nwrite arguments together!\n[-b] - browse screenshots\n"
+      exit 1
+    ;;
+  esac
+done
+
+choose=$(printf "Screenshot\nBrowse screenshots" | $menu "Choose:" -l 2)
+case $choose in
+  Screenshot)
+    scrshot
+  ;;
+  Browse\ screenshots)
+    browsescrshots
+  ;;
+  *)
+    exit 1
+  ;;
+esac
+

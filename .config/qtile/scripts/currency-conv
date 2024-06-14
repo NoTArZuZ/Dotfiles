@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+source ~/.config/qtile/vars
+
+set -euo pipefail
+
+value=$(echo "" | $menu "Enter value:")
+from=$(printf "USD\nEUR\nRUB" | $menu "From:" | tr '[:lower:]' '[:upper:]')
+to=$(printf "USD\nEUR\nRUB" | $menu "To:" | tr '[:lower:]' '[:upper:]')
+
+result=$(curl -sSL "https://www.xe.com/currencyconverter/convert/?Amount=$value&From=$from&To=$to" | sed -n 's/.*=.*<\/p><p[^>]*>\([0-9]*\.[0-9]*\).*/\1/p');
+
+notify-send "Currency Convert Tool" "$value $from is $result $to (Copied to Clipboard)"
+echo "$result $to" | xclip -r -selection clipboard;

@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# for this script to work you need translate-shell package
+
+source ~/.config/qtile/vars
+
+set -euo pipefail
+
+word=$(echo "" | $menu "Enter word or sentence to translate:")
+from=$(printf "en\nru\nde\nfr" | $menu "Translate from:" -l 4)
+to=$(printf "en\nru\nde\nfr" | $menu "Translate to:" -l 4)
+trans=$(trans -brief $from:$to $word)
+echo "$trans" | $cp2cb
+notify-send "Translate Tool" "$word from $from is $trans in $to (Copied to clipboard)"

@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+source ~/.config/qtile/vars
+
+set -euo pipefail
+
+opr=$(printf "Multiply\nAdd\nDivide\nSubstract" | $menu "Enter operation:" -l 4)
+val1=$(echo "" | $menu "Enter first value:")
+val2=$(echo "" | $menu "Enter second value:")
+case $opr in
+  Multiply)
+    eql=$(expr $val1 \* $val2)
+    echo "$eql" | $cp2cb
+    notify-send "Calculator Tool" "$val1 * $val2 is $eql (Copied to clipboard)"
+  ;;
+  Add)
+    eql=$(expr $val1 + $val2)
+    echo "$eql" | $cp2cb
+    notify-send "Calculator Tool" "$val1 + $val2 is $eql (Copied to clipboard)"
+  ;;
+  Divide)
+    eql=$(expr $val1 / $val2)
+    echo "$eql" | $cp2cb
+    notify-send "Calculator Tool" "$val1 / $val2 is $eql (Copied to clipboard)"
+  ;;
+  Substract)
+    eql=$(expr $val1 - $val2)
+    echo "$eql" | $cp2cb
+    notify-send "Calculator Tool" "$val1 - $val2 is $eql (Copied to clipboard)"
+  ;;
+  *)
+    exit 1
+  ;;
+esac
