@@ -27,3 +27,6 @@ disabled = false
 [shell]
 disabled = false
 format = "via [$indicator](bold red)"
+
+[git_commit]
+only_detached = false
