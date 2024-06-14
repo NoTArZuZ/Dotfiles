@@ -1,6 +1,8 @@
 # Dotfiles
 NoTArZuZ's dotfiles for NixOS 24.05
 
+![Screenshot](https://cdn.discordapp.com/attachments/836500386390605846/1251149097579184189/1718367567.png?ex=666d86e6&is=666c3566&hm=22cdff7179c33e81e0af066b76f3d87c9fd0b0bdb8aa9b55fe15fb74493bbf28&)
+
 ## Installation:
 
 > [!WARNING]
