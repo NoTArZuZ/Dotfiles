@@ -5,8 +5,8 @@ source ~/.config/qtile/vars
 set -euo pipefail
 
 value=$(echo "" | $menu "Enter value:")
-from=$(printf "USD\nEUR\nRUB" | $menu "From:" | tr '[:lower:]' '[:upper:]')
-to=$(printf "USD\nEUR\nRUB" | $menu "To:" | tr '[:lower:]' '[:upper:]')
+from=$(printf "USD\nEUR\nRUB" | $menu "From:" -l 3 | tr '[:lower:]' '[:upper:]')
+to=$(printf "USD\nEUR\nRUB" | $menu "To:" -l 3 | tr '[:lower:]' '[:upper:]')
 
 result=$(curl -sSL "https://www.xe.com/currencyconverter/convert/?Amount=$value&From=$from&To=$to" | sed -n 's/.*=.*<\/p><p[^>]*>\([0-9]*\.[0-9]*\).*/\1/p');
 
