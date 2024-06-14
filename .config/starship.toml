@@ -1,5 +1,5 @@
 format = '''
-[┌─|$username$custom$hostname $shell|─|$time|─> $directory$cmd_duration](bold white)
+[┌─|$username$custom$hostname $shell|─|$time|─> $directory$cmd_duration$git_branch$git_commit$git_status](bold white)
 [└─$character$status](bold white)'''
 
 [character]
