@@ -10,12 +10,12 @@
       name = "Bibata-Modern-Ice";
     };
     theme = {
-      name = "Dracula";
-      package = pkgs.dracula-theme;
+      name = "Qogir-Dark";
+      package = pkgs.qogir-theme;
     };
     iconTheme = {
-      name = "Dracula";
-      package = pkgs.dracula-icon-theme;
+      name = "Qogir";
+      package = pkgs.qogir-icon-theme;
     };
     gtk3.extraConfig = {
       Settings = ''

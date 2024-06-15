@@ -61,14 +61,31 @@
   systemd.services.mpd.environment = {
     XDG_RUNTIME_DIR = "/run/user/1000";
   };
+  systemd.user.services.polkit-gnome-authentication-agent-1 = {
+    description = "polkit-gnome-authentication-agent-1";
+    serviceConfig = {
+      Type = "simple";
+      ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+      Restart = "on-failure";
+      RestartSec = 1;
+      TimeoutStopSec = 10;
+    };
+  };
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.xserver.videoDrivers = [ "amdgpu" ];
+  services.libinput.enable = true;
+  security.polkit.enable = true;
+  services.udisks2.enable = true;
+  services.xserver.updateDbusEnvironment = true;
   services.libinput.mouse.accelProfile = "flat";
-  # Enable the XFCE Desktop Environment.
+  # Enable the Desktop Environment.
   services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.xfce.enable = true;
+  services.xserver.displayManager.lightdm.greeters.gtk.enable = false;
+  services.xserver.displayManager.lightdm.greeters.slick.enable = true;
+  services.xserver.displayManager.lightdm.greeters.slick.theme.name = "Qogir-Dark";
+  services.xserver.displayManager.lightdm.greeters.slick.theme.package = pkgs.qogir-theme;
   services.xserver.windowManager.qtile.enable = true;
   services.xserver.windowManager.qtile.extraPackages = p: with p; [ qtile-extras ];
   
@@ -114,6 +131,7 @@
   # Install firefox.
   programs.firefox.enable = true;
   programs.fish.enable = true;
+  programs.dconf.enable = true;
 
   # OpenGL support
   hardware.opengl.enable = true;
@@ -138,9 +156,6 @@
   picom
   bibata-cursors
   ranger
-  gnumake
-  gcc
-  freetype
   htop
   nsxiv
   feh
@@ -161,6 +176,8 @@
   ncmpcpp
   yt-dlp
   stow
+  polkit_gnome
+  eza
   home-manager
   (dmenu.overrideAttrs (oldAttrs: rec {
     src = builtins.fetchTarball {

@@ -7,9 +7,6 @@ Heavily inspired by DistroTube
 > [!WARNING]
 > Configured for AMD CPU and AMD GPU
 
-> [!IMPORTANT]
-> There's also xfce4 installed. So choose "none+qtile" in lightdm (if you not turned it off).
-
 ## Installation:
 
 ```
