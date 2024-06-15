@@ -116,6 +116,7 @@
   programs.fish.enable = true;
 
   # OpenGL support
+  hardware.opengl.enable = true;
   hardware.opengl.driSupport = true;
   hardware.opengl.driSupport32Bit = true;
 
@@ -179,11 +180,7 @@
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
   hardware.opengl.extraPackages = with pkgs; [
-    amdvlk
     rocmPackages.clr.icd
-  ];
-  hardware.opengl.extraPackages32 = with pkgs; [
-    driversi686Linux.amdvlk
   ];
   environment.variables.EDITOR = "hx";
 

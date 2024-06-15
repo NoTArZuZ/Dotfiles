@@ -15,7 +15,7 @@ Heavily inspired by DistroTube
 ```
 git clone https://github.com/NoTArZuZ/Dotfiles ~/Dotfiles
 mv ~/Dotfiles/nix-cfg ~/nix-cfg
-cd nix-cfg
+cd ~/nix-cfg
 sudo nixos-rebuild switch --flake .
 ```
 
@@ -27,6 +27,14 @@ stow --adopt .
 ```
 
 And then reboot!
+
+## Updating
+
+```
+cd ~/Dotfiles/nix-cfg
+git pull
+sudo nixos-rebuild switch --flake .
+```
 
 ## Keybinds:
 
