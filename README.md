@@ -1,11 +1,12 @@
 # Dotfiles
 NoTArZuZ's dotfiles for NixOS 24.05
-Heavily inspired by DistroTube
+Heavily inspired by DistroTube.
 
 ![Screenshot](https://cdn.discordapp.com/attachments/836500386390605846/1251149097579184189/1718367567.png?ex=666d86e6&is=666c3566&hm=22cdff7179c33e81e0af066b76f3d87c9fd0b0bdb8aa9b55fe15fb74493bbf28&)
 
-> [!WARNING]
-> Configured for AMD CPU and AMD GPU
+> [!IMPORTANT]
+> Configuration made for AMD CPU, AMD GPU and wired internet connection.
+> Change configuration.nix/hardware-configuration.nix before rebuilding to match your hardware.
 
 ## Installation:
 

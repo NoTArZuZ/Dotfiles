@@ -42,11 +42,13 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+  # Enable fstrim for better SSD lifetime.
   services.fstrim = {
     enable = true;
     interval = "weekly";
   };
 
+  # Enable mpd for music.
   services.mpd = {
     enable = true;
     musicDirectory = "/home/sus/Music";
@@ -61,6 +63,8 @@
   systemd.services.mpd.environment = {
     XDG_RUNTIME_DIR = "/run/user/1000";
   };
+
+  # Polkit-gnome systemd service.
   systemd.user.services.polkit-gnome-authentication-agent-1 = {
     description = "polkit-gnome-authentication-agent-1";
     serviceConfig = {
@@ -74,21 +78,30 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
+
+  # Enable GPU drivers for X11.
   services.xserver.videoDrivers = [ "amdgpu" ];
+
+  # Enable some desktop services.
   services.libinput.enable = true;
   security.polkit.enable = true;
   services.udisks2.enable = true;
   services.xserver.updateDbusEnvironment = true;
+
+  # Change mouse acceleration to flat.
   services.libinput.mouse.accelProfile = "flat";
-  # Enable the Desktop Environment.
+
+  # Enable the lightdm service.
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.displayManager.lightdm.greeters.gtk.enable = false;
   services.xserver.displayManager.lightdm.greeters.slick.enable = true;
   services.xserver.displayManager.lightdm.greeters.slick.theme.name = "Qogir-Dark";
   services.xserver.displayManager.lightdm.greeters.slick.theme.package = pkgs.qogir-theme;
+
+  # Enable qtile
   services.xserver.windowManager.qtile.enable = true;
   services.xserver.windowManager.qtile.extraPackages = p: with p; [ qtile-extras ];
-  
+
   # Configure keymap in X11
   services.xserver = {
     layout = "us";
@@ -114,9 +127,6 @@
     #media-session.enable = true;
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.sus = {
     isNormalUser = true;
@@ -128,22 +138,23 @@
     ];
   };
 
-  # Install firefox.
+  # Install some programs.
   programs.firefox.enable = true;
   programs.fish.enable = true;
   programs.dconf.enable = true;
 
-  # OpenGL support
+  # OpenGL support.
   hardware.opengl.enable = true;
   hardware.opengl.driSupport = true;
   hardware.opengl.driSupport32Bit = true;
 
-  # Allow unfree packages
+  # Allow unfree packages.
   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
+  # Enable NixOS flakes support.
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  # Install system packages.
   environment.systemPackages = with pkgs; [
   wget
   curl
@@ -192,13 +203,19 @@
     buildInputs = oldAttrs.buildInputs ++ [ harfbuzz fontconfig xorg.libX11 xorg.libXft ];
   }))
   ];
+
+  # Install fonts.
   fonts.packages = with pkgs; [
     ubuntu_font_family
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
+
+  # Install OpenGL extra packages.
   hardware.opengl.extraPackages = with pkgs; [
     rocmPackages.clr.icd
   ];
+
+  # Set default text editor.
   environment.variables.EDITOR = "hx";
 
   # Some programs need SUID wrappers, can be configured further or are
