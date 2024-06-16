@@ -7,6 +7,11 @@ set -euo pipefail
 # this thing gonna be MASSIVE
 # for now qtile, xresources (gtk through home-manager) is supported
 
+wallustchange() {
+  wallust run ~/.cache/wallcache
+  xrdb -merge ~/.cache/colors-xresources
+}
+
 dontdoit() {
 choose1=$(printf "Toggle Theme\nChange Theme" | $menu "Choose:" -l 2)
 case $choose1 in

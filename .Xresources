@@ -49,8 +49,3 @@ st.font:           JetBrainsMono Nerd Font:style:medium:pixelsize=16
 ! LightGrey + White
 *color7:  #e6e6e6
 *color15: #efefef
-
-dmenu.background: #3b4252
-dmenu.selbackground: #88c0d0
-dmenu.hlforeground: #d8dee9
-dmenu.selhlforeground: #eceff4

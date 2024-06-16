@@ -22,5 +22,6 @@ scrshotdir="$HOME/Pictures/Screenshots"
 notedir="$HOME/Notes/" # / at the end
 scrdir="$HOME/.config/qtile/scripts/" # / at the end
 # themes
-themes="Dracula\nWal" # please write your themes in this var (case sensitive)
+themes="DoomOne\nDracula\nWal" # please write your themes in this var (case sensitive)
+curtheme="DoomOne"
 themecol="dark" # do not change this var
