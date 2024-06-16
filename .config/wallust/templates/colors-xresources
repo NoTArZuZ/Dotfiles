@@ -1,0 +1,51 @@
+Xft.antialias:	1
+Xft.hinting:	1
+Xft.autohint:	0
+Xft.hintstyle:	hintslight
+Xft.rgba:	rgb
+Xft.lcdfilter:	lcddefault
+Xcursor.theme: Bibata-Modern-Ice
+Xcursor.size: 24
+
+! window padding
+! st.borderpx: 10
+
+!-- values between 0.1  - 1.0 --! 
+
+st.alpha: 0.8
+st.font:           JetBrainsMono Nerd Font:style:medium:pixelsize=16
+
+*background: {background}
+*foreground: {foreground}
+
+! Black + DarkGrey
+*color0:  {color0}
+*color8:  {color8}
+
+! DarkRed + Red
+*color1:  {color1}
+*color9:  {color9}
+
+! DarkGreen + Green
+*color2:  {color2}
+*color10: {color10}
+
+! DarkYellow + Yellow
+*color3:  {color3}
+*color11: {color11}
+
+! DarkBlue + Blue
+*color4:  {color4}
+*color12: {color12}
+
+! DarkMagenta + Magenta
+*color5:  {color5}
+*color13: {color13}
+
+! DarkCyan + Cyan
+*color6:  {color6}
+*color14: {color14}
+
+! LightGrey + White
+*color7:  {color7}
+*color15: {color15}

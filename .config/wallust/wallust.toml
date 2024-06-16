@@ -1,0 +1,15 @@
+backend = "resized"
+color_space = "lab"
+palette = "dark"
+threshold = 10
+new_engine = true
+
+[templates]
+qtile.template = 'templates/colors-qtile.py'
+qtile.target = '~/.config/qtile/colors.py'
+
+dunst.template = 'templates/colors-dunstrc'
+dunst.target = '~/.cache/colors-dunstrc'
+
+xresources.template = 'templates/colors-xresources'
+xresources.target = '~/.cache/colors-xresources'
