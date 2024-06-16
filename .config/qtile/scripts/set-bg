@@ -7,14 +7,14 @@ set -euo pipefail
 set_wallpaper() {
   setwallpaper=$($imgview $bgdir)
   $imgsetbg $setwallpaper
-  echo $setwallpaper > $HOME/.cache/wallcache
+  ln -sf $setwallpaper $HOME/.cache/wallcache
   notify-send "Wallpaper Tool" "Changed wallpaper to $setwallpaper"
 }
 
 rand_wallpaper() {
   setwallpaper=$(find $bgdir -type f | shuf -n 1)
   $imgsetbg $setwallpaper
-  echo $setwallpaper > $HOME/.cache/wallcache
+  ln -sf $setwallpaper $HOME/.cache/wallcache
   notify-send "Wallpaper Tool" "Changed wallpaper to $setwallpaper"
 }
 

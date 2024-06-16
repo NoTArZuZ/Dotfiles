@@ -79,3 +79,7 @@ sudo nixos-rebuild switch --flake .
 | dmenu (DistroTube fork) | Suckless menus                                |
 | st (Luke Smith fork)    | Suckless terminal emulator                    |
 | and more!               | See ~/.config/qtile/vars or configuration.nix |
+
+## TODO:
+* Write theme-changer script
+* Integrate wallust

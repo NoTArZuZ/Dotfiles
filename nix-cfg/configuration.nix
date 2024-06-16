@@ -172,6 +172,7 @@
   feh
   (wrapOBS { plugins = [ obs-studio-plugins.obs-gstreamer obs-studio-plugins.obs-vaapi ]; })
   dunst
+  wallust
   libnotify
   radeontop
   xclip
