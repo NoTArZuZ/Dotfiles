@@ -61,8 +61,8 @@ browsescrshots() {
 }
 
 scrshot() {
-choose1=$(printf "Monitor\nWindow\nArea" | $menu "Choose:" -l 3)
-choose2=$(printf "Both\nCopy to clipboard\nSave to file" | $menu "Choose:" -l 3)
+choose1=$(printf "Monitor\nWindow\nArea" | $menu "Choose:" -l 3 -R)
+choose2=$(printf "Both\nCopy to clipboard\nSave to file" | $menu "Choose:" -l 3 -R)
 case $choose2 in
   Both)
      if [ $choose1 == "Monitor" ]; then
@@ -151,7 +151,7 @@ while test $# -gt 0; do
   esac
 done
 
-choose=$(printf "Screenshot\nBrowse screenshots" | $menu "Choose:" -l 2)
+choose=$(printf "Screenshot\nBrowse screenshots" | $menu "Choose:" -l 2 -R)
 case $choose in
   Screenshot)
     scrshot

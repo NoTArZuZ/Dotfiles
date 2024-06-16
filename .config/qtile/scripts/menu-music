@@ -5,24 +5,24 @@ source ~/.config/qtile/vars
 set -euo pipefail
 
 trackplaystuff() {
-  trackchoose=$(printf "Insert to Queue\nAdd to Queue\nPlay only" | $menu "Choose:" -l 3)
+  trackchoose=$(printf "Insert to Queue\nAdd to Queue\nPlay only" | $menu "Choose:" -l 3 -R)
   case $trackchoose in
     Insert\ to\ Queue)
-      tracktoplay=$(mpc listall | $menu "Track to add:" -l $(mpc listall | wc -l))
+      tracktoplay=$(mpc listall | $menu "Track to add:" -R -l $(mpc listall | wc -l))
       mpc -q insert "$tracktoplay"
       mpc -q play
       notify-send "Music Tool" "$tracktoplay Inserted in Queue"
       exit 0
     ;;
     Add\ to\ Queue)
-      tracktoplay=$(mpc listall | $menu "Track to add:" -l $(mpc listall | wc -l))
+      tracktoplay=$(mpc listall | $menu "Track to add:" -R -l $(mpc listall | wc -l))
       mpc -q add "$tracktoplay"
       mpc -q play
       notify-send "Music Tool" "$tracktoplay Added to Queue"
       exit 0
     ;;
     Play\ only)
-      tracktoplay=$(mpc listall | $menu "Track to play:" -l $(mpc listall | wc -l))
+      tracktoplay=$(mpc listall | $menu "Track to play:" -R -l $(mpc listall | wc -l))
       mpc -q clear
       mpc -q add "$tracktoplay"
       mpc -q play
@@ -36,17 +36,17 @@ trackplaystuff() {
 }
 
 listplaystuff() {
-  listchoose=$(printf "Load to Queue\nPlay only" | $menu "Choose:" -l 2)
+  listchoose=$(printf "Load to Queue\nPlay only" | $menu "Choose:" -l 2 -R)
   case $listchoose in
     Load\ to\ Queue)
-      listtoplay=$(mpc lsplaylists | $menu "Playlist to add:" -l $(mpc lsplaylists | wc -l))
+      listtoplay=$(mpc lsplaylists | $menu "Playlist to add:" -R -l $(mpc lsplaylists | wc -l))
       mpc -q load "$listtoplay"
       mpc -q play
       notify-send "Music Tool" "$listtoplay Loaded to Queue"
       exit 0
     ;;
     Play\ only)
-      listtoplay=$(mpc lsplaylists | $menu "Playlist to play:" -l $(mpc lsplaylists | wc -l))
+      listtoplay=$(mpc lsplaylists | $menu "Playlist to play:" -R -l $(mpc lsplaylists | wc -l))
       mpc -q clear
       mpc -q load "$listtoplay"
       mpc -q play
@@ -60,7 +60,7 @@ listplaystuff() {
 }
 
 playstuff() {
-  toplay=$(printf "Track\nPlaylist\nNext\nPrev" | $menu "Play:" -l 4)
+  toplay=$(printf "Track\nPlaylist\nNext\nPrev" | $menu "Play:" -l 4 -R)
   case $toplay in
     Track)
       trackplaystuff
@@ -83,7 +83,7 @@ playstuff() {
 }
 
 settingsmpd() {
-  settingschoose=$(printf "Volume\nList\nSeek\nDelete track\nMove track\nClear\nSingle\nRandom\nRepeat\nConsume\nShuffle" | $menu "Choose:" -l 11)
+  settingschoose=$(printf "Volume\nList\nSeek\nDelete track\nMove track\nClear\nSingle\nRandom\nRepeat\nConsume\nShuffle" | $menu "Choose:" -l 11 -R)
   case $settingschoose in
     Volume)
       changevol=$(echo "" | $menu "Volume from 0 - 100:")
@@ -139,7 +139,7 @@ settingsmpd() {
   esac
 }
 
-choose=$(printf "Play\nToggle\nPlaylist\nStop\nTUI player" | $menu "Choose:" -l 5)
+choose=$(printf "Play\nToggle\nPlaylist\nStop\nTUI player" | $menu "Choose:" -l 5 -R)
 case $choose in
   Play)
     playstuff

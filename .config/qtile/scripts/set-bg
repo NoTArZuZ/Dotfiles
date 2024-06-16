@@ -36,7 +36,7 @@ while test $# -gt 0; do
 done    
 
 
-choose=$(printf "Set Wallpaper\nRandom Wallpaper" | $menu "Choose:" -l 2)
+choose=$(printf "Set Wallpaper\nRandom Wallpaper" | $menu "Choose:" -l 2 -R)
 case $choose in
   Set\ Wallpaper)
     set_wallpaper
@@ -45,7 +45,7 @@ case $choose in
     ilikerandom="Yes"
     until [ "$ilikerandom" = "No" ]; do
     rand_wallpaper
-    ilikerandom=$(printf "Yes\nNo" | $menu "Another one?" -l 2)
+    ilikerandom=$(printf "Yes\nNo" | $menu "Another one?" -l 2 -R)
     done
   ;;
   *)

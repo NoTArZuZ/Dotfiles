@@ -50,7 +50,7 @@ st.font:           JetBrainsMono Nerd Font:style:medium:pixelsize=16
 *color7:  #e6e6e6
 *color15: #efefef
 
-dmenu.font: Ubuntu:pixelsize=16
+dmenu.font: Ubuntu:pixelsize=14
 dmenu.background: #282c34
 dmenu.selbackground: #c678dd
 dmenu.foreground: #bbc2c2

@@ -4,8 +4,8 @@ source ~/.config/qtile/vars
 
 set -euo pipefail
 
-choose=$(printf "Video\nAudio" | $menu "Download from yt:" -l 2)
-downdir=$(printf "~/Videos\n~/Music" | $menu "Download dir:" -l 2)
+choose=$(printf "Video\nAudio" | $menu "Download from yt:" -l 2 -R)
+downdir=$(printf "~/Videos\n~/Music" | $menu "Download dir:" -l 2 -R)
 case $choose in
   Video)
     videoformat=$(printf "mp4\nmkv\navi" | $menu "Video format:" -l 3)

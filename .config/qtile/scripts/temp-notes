@@ -4,7 +4,7 @@ source ~/.config/qtile/vars
 
 set -euo pipefail
 
-choose=$(printf "New note\nCopy note\nRead note\nEdit note\nDelete note" | $menu "Choose:" -l 5)
+choose=$(printf "New note\nCopy note\nRead note\nEdit note\nDelete note" | $menu "Choose:" -l 5 -R)
 case $choose in
   New\ note)
     notename=$(echo "" | $menu "Note to create:")
@@ -13,23 +13,23 @@ case $choose in
     notify-send "Note Tool" "Successfully created $notename note"
   ;;
   Copy\ note)
-    notename=$(find $notedir -type f -printf '%f\n' | $menu "Note to copy:" -l $(find $notedir -type f | wc -l))
+    notename=$(find $notedir -type f -printf '%f\n' | $menu "Note to copy:" -R -l $(find $notedir -type f | wc -l))
     cat $notedir"$notename" | $cp2cb
     notify-send "Note Tool" "Successfully copied $notename note content"
   ;;
   Read\ note)
-    notename=$(find $notedir -type f -printf '%f\n' | $menu "Note to read:" -l $(find $notedir -type f | wc -l))
+    notename=$(find $notedir -type f -printf '%f\n' | $menu "Note to read:" -R -l $(find $notedir -type f | wc -l))
     notefile=$(cat $notedir"$notename")
     notify-send -w "Note Tool" "$notefile"
   ;;
   Edit\ note)
-    notename=$(find $notedir -type f -printf '%f\n' | $menu "Note to edit:" -l $(find $notedir -type f | wc -l))
+    notename=$(find $notedir -type f -printf '%f\n' | $menu "Note to edit:" -R -l $(find $notedir -type f | wc -l))
     notestuff=$(echo "" | $menu "Enter your note:")
     echo "$notestuff" > $notedir"$notename"
     notify-send "Note Tool" "Successfully edited $notename note"
   ;;
   Delete\ note)
-    notename=$(find $notedir -type f -printf '%f\n' | $menu "Note to delete:" -l $(find $notedir -type f | wc -l))
+    notename=$(find $notedir -type f -printf '%f\n' | $menu "Note to delete:" -R -l $(find $notedir -type f | wc -l))
     rm $notedir"$notename"
     notify-send "Note Tool" "Successfully deleted $notename note"
   ;;

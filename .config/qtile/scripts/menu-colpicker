@@ -14,7 +14,7 @@ pick_color() {
 
 list_colors() {
   if [ -e $HOME/.cache/colorpicklist ]; then
-    color=$(cat $HOME/.cache/colorpicklist | $menu "Color to copy:" -l $(cat $HOME/.cache/colorpicklist | wc -l))
+    color=$(cat $HOME/.cache/colorpicklist | $menu "Color to copy:" -R -l $(cat $HOME/.cache/colorpicklist | wc -l))
     echo "$color" | $cp2cb
     notify-send "Color Picker Tool" "Successfully Copied Color $color"
     exit 0
@@ -39,7 +39,7 @@ while test $# -gt 0; do
   esac
 done
 
-choose=$(printf "Pick color\nList colors\nClean list" | $menu "Choose:" -l 3)
+choose=$(printf "Pick color\nList colors\nClean list" | $menu "Choose:" -l 3 -R)
 case $choose in
   Pick\ color)
     pick_color

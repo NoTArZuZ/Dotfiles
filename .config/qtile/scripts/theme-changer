@@ -5,7 +5,7 @@ source ~/.config/qtile/vars
 set -euo pipefail
 
 # this thing gonna be MASSIVE
-# for now qtile, xresources (gtk through home-manager) is supported
+# for now qtile, dunst, xresources (gtk and qt through home-manager) is supported
 
 wallustchange() {
   wallust run ~/.cache/wallcache

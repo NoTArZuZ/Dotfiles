@@ -4,7 +4,7 @@ source ~/.config/qtile/vars
 
 set -euo pipefail
 
-opr=$(printf "Multiply\nAdd\nDivide\nSubstract" | $menu "Enter operation:" -l 4)
+opr=$(printf "Multiply\nAdd\nDivide\nSubstract" | $menu "Enter operation:" -l 4 -R)
 val1=$(echo "" | $menu "Enter first value:")
 val2=$(echo "" | $menu "Enter second value:")
 case $opr in
