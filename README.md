@@ -45,8 +45,8 @@ sudo nixos-rebuild switch --flake .
 | Super + Tab          | Cycle qtile layouts                    |
 | Super + 1-5          | Switch to workspace                    |
 | Super + Shift + 1-5  | Move window to workspace               |
-| Super + hjkl         | Move focus right down up left          |
-| Super + Shift + hjkl | Move focused window right down up left |
+| Super + hjkl         | Move focus left down up right          |
+| Super + Shift + hjkl | Move focused window left down up right |
 | Super + t            | Toggle window floating                 |
 | Super + e            | Launch st with ranger                  |
 | Super + b            | Launch firefox                         |
@@ -59,6 +59,7 @@ sudo nixos-rebuild switch --flake .
 
 | Package                 | Description                                   |
 | ----------------------- | --------------------------------------------- |
+| stow                    | Dotfiles manager (You can easily update them) |
 | qtile (on X11)          | The best tiling WM ever IMO                   |
 | firefox                 | Based web browser                             |
 | fish                    | A shell without massive configs               |
@@ -76,8 +77,9 @@ sudo nixos-rebuild switch --flake .
 | zoxide                  | Better than cd                                |
 | davinci-resolve         | The only video editor on linux                |
 | starship                | Fancy shell prompt                            |
+| eza                     | Fancy ls, ll and tree replacement             |
 | mpd and ncmpcpp         | Music                                         |
-| dmenu (DistroTube fork) | Suckless menus                                |
+| dmenu (My fork)         | Suckless menus                                |
 | st (Luke Smith fork)    | Suckless terminal emulator                    |
 | and more!               | See ~/.config/qtile/vars or configuration.nix |
 

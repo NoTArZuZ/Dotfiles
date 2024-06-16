@@ -32,13 +32,10 @@ nixosrebuildstuff() {
 }
 
 nixosstuff() {
-  choose2=$(printf "Rebuild\nHome-manager switch\nCollect garbage\nDelete generations" | $menu "Choose:" -l 4 -R)
+  choose2=$(printf "Rebuild\nCollect garbage\nDelete generations" | $menu "Choose:" -l 3 -R)
   case $choose2 in
     Rebuild)
       nixosrebuildstuff
-    ;;
-    Home-manager\ switch)
-      $term home-manager switch
     ;;
     Collect\ garbage)
       $term sudo nix-collect-garbage
