@@ -5,5 +5,5 @@ set -euo pipefail
 source $HOME/.config/qtile/vars
 
 list=$(find $scrdir | wc -l)
-choose=$(find -L $scrdir -type f -printf '%f\n' | sort | $menu "Choose:" -l $list)
+choose=$(find -L $scrdir -type f -printf '%f\n' | sort | $menu "Run script:" -R -l $list)
 exec $scrdir"$choose"

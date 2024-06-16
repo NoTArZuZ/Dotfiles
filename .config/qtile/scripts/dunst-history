@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+source ~/.config/qtile/vars
+
+set -euo pipefail
+
+ifmorethan1() {
+until [ $counthist == $history ]; do
+counthist=$(expr $counthist + 1)
+echo $counthist >> ~/.cache/dunsthistoryid
+done
+
+cacheids=$(cat ~/.cache/dunsthistoryid)
+rm ~/.cache/dunsthistoryid
+
+idtopop=$(printf "$cacheids" | $menu "Id to pop:" -l $history)
+dunstctl history-pop $idtopop
+}
+
+counthist=1
+
+history=$(dunstctl count history)
+
+if [ $history == 0 ]; then
+  exit 1
+fi
+
+if [ $history == 1 ]; then
+  dunstctl history-pop
+else
+  history=$(expr $history + 1)
+  ifmorethan1
+fi

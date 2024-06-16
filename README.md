@@ -40,8 +40,8 @@ sudo nixos-rebuild switch --flake .
 | -------------------- | -------------------------------------- |
 | Super + Enter        | Launch st                              |
 | Super + w            | Kill focused window                    |
-| Super + ctrl + q     | Shutdown qtile                         |
-| Super + ctrl + r     | Reload qtile config                    |
+| Super + Ctrl + q     | Shutdown qtile                         |
+| Super + Ctrl + r     | Reload qtile config                    |
 | Super + Tab          | Cycle qtile layouts                    |
 | Super + 1-5          | Switch to workspace                    |
 | Super + Shift + 1-5  | Move window to workspace               |
@@ -52,7 +52,8 @@ sudo nixos-rebuild switch --flake .
 | Super + b            | Launch firefox                         |
 | Super + r            | Launch dmenu_run                       |
 | Super + g            | Launch dmenu script hub                |
-| and more!            | See config.py                          |
+| Super + Shift + n    | Send previous notification             |
+| and more!            | See ~/.config/qtile/config.py          |
 
 ## Installed packages:
 
