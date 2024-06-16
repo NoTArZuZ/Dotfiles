@@ -193,7 +193,7 @@
   home-manager
   (dmenu.overrideAttrs (oldAttrs: rec {
     src = builtins.fetchTarball {
-      url = "https://gitlab.com/dwt1/dmenu-distrotube/-/archive/master/dmenu-distrotube-master.tar.gz";
+      url = "https://github.com/NoTArZuZ/dmenu-sus/archive/master.tar.gz";
     };
     buildInputs = oldAttrs.buildInputs ++ [ xorg.libX11 xorg.libXft xorg.libXinerama fontconfig xorg.libXrender freetype ];
   }))

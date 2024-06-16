@@ -49,3 +49,16 @@ st.font:           JetBrainsMono Nerd Font:style:medium:pixelsize=16
 ! LightGrey + White
 *color7:  {color7}
 *color15: {color15}
+
+dmenu.font: Ubuntu:pixelsize=16
+dmenu.background: {background}
+dmenu.selbackground: {color5}
+dmenu.foreground: {foreground}
+dmenu.selforeground: {color1}
+dmenu.selhlbackground: #000000
+dmenu.selhlforeground: #98be65
+dmenu.hlbackground: #000000
+dmenu.hlforeground: #98be65
+dmenu.midbackground: {color1}
+dmenu.midforeground: {color7}
+dmenu.bordercolor: {color5}
