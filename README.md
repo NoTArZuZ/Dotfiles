@@ -82,7 +82,7 @@ stow .
 | eza                     | Fancy ls, ll and tree replacement             |
 | mpd and ncmpcpp         | Music                                         |
 | dmenu (My fork)         | Suckless menus                                |
-| st (Luke Smith fork)    | Suckless terminal emulator                    |
+| st (My fork)            | Suckless terminal emulator                    |
 | and more!               | See ~/.config/qtile/vars or configuration.nix |
 
 ## TODO:
