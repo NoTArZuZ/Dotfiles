@@ -7,32 +7,63 @@ set -euo pipefail
 # this thing gonna be MASSIVE
 # for now qtile, dunst, xresources (gtk and qt through home-manager) is supported
 
-wallustchange() {
-  wallust run ~/.cache/wallcache
-  xrdb -merge ~/.cache/colors-xresources
+while test $# -gt 0; do
+  case "$1" in
+    -r)
+      restoretheme
+      exit 0
+    ;;
+    *)
+      printf "[-r] - restore theme\n"
+      exit 1
+    ;;
+  esac
+done
+
+restoretheme() {
+  if [ $CURTHEME != "Wal" ]; then
+    xrdb -merge ~/.config/wallust/extrathemes/xres-$CURTHEME
+  else
+    wallust run ~/.cache/wallcache
+    xrdb -merge ~/.cache/colors-xresources
+  fi
 }
 
 dontdoit() {
 choose1=$(printf "Toggle Theme\nChange Theme" | $menu "Choose:" -l 2)
 case $choose1 in
   Toggle\ Theme)
-  if [ $themecol == "dark" ]; then
+  if [ $THEMECOL == "dark" ]; then
     # make colors dark
   else
     # make colors light
   fi
 # OMG sed i fucking love sed my lifestyle is sed
-  if [ $themecol == "dark" ]; then
-    sed -i '/^themecol="dark"/c\themecol="light"' $HOME/.config/qtile/vars
+  if [ $THEMECOL == "dark" ]; then
+    sed -i "s/^THEMECOL=.*/THEMECOL=light/g" $HOME/.config/qtile/autostart.sh
   else
-    sed -i '/^themecol="light"/c\themecol="dark"' $HOME/.config/qtile/vars
+    sed -i "s/^THEMECOL=.*/THEMECOL=dark/g" $HOME/.config/qtile/autostart.sh
   fi
   ;;
   Change\ Theme)
   choose2=$(printf "$themes" | $menu "Choose:" -l $(printf "$themes\n" | wc -l))
+  if [ $choose2 == "Wal" ]; then
+    wallustchange
+    sed -i "s/^colors = colors.*/colors = colors.$choose2/g" $HOME/.config/qtile/config.py
+    sed -i "s/^CURTHEME=.*/CURTHEME=$choose2/g" $HOME/.config/qtile/autostart.sh
+    qtile cmd-obj -o cmd -f reload_config
+    notify-send "Theme Tool" "Changed Theme to Wallust"
+  fi
+  sed -i "s/^colors = colors.*/colors = colors.$choose2/g" $HOME/.config/qtile/config.py
+  sed -i "s/^CURTHEME=.*/CURTHEME=$choose2/g" $HOME/.config/qtile/autostart.sh
+  qtile cmd-obj -o cmd -f reload_config
+  restoretheme
+  cp ~/.config/wallust/extrathemes/home-"$CURTHEME".nix ~/Dotfiles/nix-cfg/home.nix
+  home-manager switch --flake ~/Dotfiles/nix-cfg
+  notify-send "Theme Tool" "Changed Theme to $choose2"
   ;;
   *)
-  exit 1
+    exit 1
   ;;
 esac
 }

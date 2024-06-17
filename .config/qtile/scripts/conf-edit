@@ -18,7 +18,7 @@ nixcfgedit() {
   $term $EDITOR $nixcfgdir"$conftoed"
 }
 
-choose=$(printf "NixOS\nDotfiles" | $menu "Choose:" -R -l 2)
+choose=$(printf "Dotfiles\nNixOS" | $menu "Choose:" -R -l 2)
 case $choose in
   NixOS)
     nixcfgedit

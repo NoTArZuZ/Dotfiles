@@ -1,0 +1,64 @@
+Xft.antialias:	1
+Xft.hinting:	1
+Xft.autohint:	0
+Xft.hintstyle:	hintslight
+Xft.rgba:	rgb
+Xft.lcdfilter:	lcddefault
+Xcursor.theme: Bibata-Modern-Ice
+Xcursor.size: 24
+
+! window padding
+st.borderpx: 2
+
+!-- values between 0.1  - 1.0 --! 
+
+st.alpha: 0.8
+st.font:           JetBrainsMono Nerd Font:style:medium:pixelsize=16
+
+*background: #1e1e2e
+*foreground: #cdd6f4
+
+! Black + DarkGrey
+*color0:  #11111b
+*color8:  #313244
+
+! DarkRed + Red
+*color1:  #f38ba8
+*color9:  #f38ba8
+
+! DarkGreen + Green
+*color2:  #a6e3a1
+*color10: #a6e3a1
+
+! DarkYellow + Yellow
+*color3:  #fab387
+*color11: #fab387
+
+! DarkBlue + Blue
+*color4:  #89b4fa
+*color12: #89b4fa
+
+! DarkMagenta + Magenta
+*color5:  #cba6f7
+*color13: #cba6f7
+
+! DarkCyan + Cyan
+*color6:  #89dceb
+*color14: #89dceb
+
+! LightGrey + White
+*color7:  #45475a
+*color15: #eff1f5
+
+dmenu.font: Ubuntu:pixelsize=14
+dmenu.background: #1e1e2e
+dmenu.selbackground: #cba6f7
+dmenu.foreground: #cdd6f4
+dmenu.selforeground: #11111b
+dmenu.selhlbackground: #000000
+dmenu.selhlforeground: #a6e3a1
+dmenu.hlbackground: #000000
+dmenu.hlforeground: #a6e3a1
+dmenu.midbackground: #11111b
+dmenu.midforeground: #d7d7d7
+dmenu.bordercolor: #cba6f7
