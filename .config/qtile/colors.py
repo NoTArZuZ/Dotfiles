@@ -38,7 +38,7 @@ Dracula  = [
     ["#9aedfe", "#9aedfe"]  # color15
     ]
 
-GruvboxDark  = [
+Gruvbox  = [
     ["#282828", "#282828"], # bg
     ["#ebdbb2", "#ebdbb2"], # fg
     ["#000000", "#000000"], # color01
@@ -48,6 +48,30 @@ GruvboxDark  = [
     ["#83a598", "#83a598"], # color05
     ["#d3869b", "#d3869b"], # color06
     ["#b8bb26", "#b8bb26"], # color11
+    ]
+    
+CatppuccinMocha  = [
+    ["#1e1e2e", "#1e1e2e"], # bg
+    ["#cdd6f4", "#cdd6f4"], # fg
+    ["#11111b", "#11111b"], # color01
+    ["#f38ba8", "#f38ba8"], # color02
+    ["#a6e3a1", "#a6e3a1"], # color03
+    ["#fab387", "#fab387"], # color04
+    ["#89b4fa", "#89b4fa"], # color05
+    ["#cba6f7", "#cba6f7"], # color06
+    ["#89dceb", "#89dceb"], # color11
+    ]
+    
+RosePine  = [
+    ["#26233a", "#26233a"], # bg
+    ["#e0def4", "#e0def4"], # fg
+    ["#191724", "#191724"], # color01
+    ["#eb6f92", "#eb6f92"], # color02
+    ["#9ccfd8", "#9ccfd8"], # color03
+    ["#f6c177", "#f6c177"], # color04
+    ["#31748f", "#31748f"], # color05
+    ["#c4a7e7", "#c4a7e7"], # color06
+    ["#3e8fb0", "#3e8fb0"], # color11
     ]
 
 MonokaiPro = [

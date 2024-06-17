@@ -10,11 +10,11 @@
       name = "Bibata-Modern-Ice";
     };
     theme = {
-      name = "Gruvbox-Dark";
-      package = pkgs.gruvbox-gtk-theme;
+      name = "gruvbox-dark";
+      package = pkgs.gruvbox-dark-gtk;
     };
     iconTheme = {
-      name = "gruvbox-dark-icons-gtk";
+      name = "gruvbox-dark";
       package = pkgs.gruvbox-dark-icons-gtk;
     };
     gtk3.extraConfig = {

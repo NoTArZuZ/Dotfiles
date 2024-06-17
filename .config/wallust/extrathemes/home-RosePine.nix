@@ -6,12 +6,16 @@
   };
   gtk = {
     enable = true;
-    catppuccin = {
-      enable = true;
-      icon.enable = true;
-    };
     cursorTheme = {
       name = "Bibata-Modern-Ice";
+    };
+    theme = {
+      name = "Dracula";
+      package = pkgs.dracula-theme;
+    };
+    iconTheme = {
+      name = "Dracula";
+      package = pkgs.dracula-icon-theme;
     };
     gtk3.extraConfig = {
       Settings = ''

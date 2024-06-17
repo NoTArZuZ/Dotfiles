@@ -23,9 +23,7 @@ history=$(dunstctl count history)
 
 if [ $history == 0 ]; then
   exit 1
-fi
-
-if [ $history == 1 ]; then
+elif [ $history == 1 ]; then
   dunstctl history-pop
 else
   history=$(expr $history + 1)

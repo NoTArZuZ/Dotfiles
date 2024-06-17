@@ -1,11 +1,42 @@
 #!/usr/bin/env bash
 
 source ~/.config/qtile/vars
+source ~/.config/qtile/curtheme
 
 set -euo pipefail
 
 # this thing gonna be MASSIVE
-# for now qtile, dunst, xresources (gtk and qt through home-manager) is supported
+# for now qtile, helix, xresources (gtk and qt through home-manager) is supported
+
+lowcasetheme() {
+  lowcasechoose=$(echo $choose2 | tr '[:upper:]' '[:lower:]')
+  if [ $CURTHEME == "CatppuccinMocha" ]; then
+    lowcasecurtheme="catppuccin_mocha"
+  elif [ $CURTHEME = "RosePine" ]; then
+    lowcasecurtheme="rose_pine"
+  else
+    lowcasecurtheme=$(echo $CURTHEME | tr '[:upper:]' '[:lower:]')
+  fi
+}
+
+helixtheming() {
+  if [ $choose2 == "CatppuccinMocha" ]; then
+    sed -i "s/$lowcasecurtheme/catppuccin_mocha/" $HOME/Dotfiles/.config/helix/config.toml
+  elif [ $choose2 == "RosePine" ]; then
+    sed -i "s/$lowcasecurtheme/rose_pine/" $HOME/Dotfiles/.config/helix/config.toml
+  else
+    sed -i "s/$lowcasecurtheme/$lowcasechoose/" $HOME/Dotfiles/.config/helix/config.toml
+  fi
+}
+
+restoretheme() {
+  if [ $CURTHEME == "Wal" ]; then
+    wallust run ~/.cache/wallcache
+    xrdb -merge ~/.cache/colors-xresources
+  else
+    xrdb -merge ~/.config/wallust/extrathemes/xres-$CURTHEME
+  fi
+}
 
 while test $# -gt 0; do
   case "$1" in
@@ -20,52 +51,23 @@ while test $# -gt 0; do
   esac
 done
 
-restoretheme() {
-  if [ $CURTHEME != "Wal" ]; then
-    xrdb -merge ~/.config/wallust/extrathemes/xres-$CURTHEME
-  else
-    wallust run ~/.cache/wallcache
-    xrdb -merge ~/.cache/colors-xresources
-  fi
-}
-
-dontdoit() {
-choose1=$(printf "Toggle Theme\nChange Theme" | $menu "Choose:" -l 2)
-case $choose1 in
-  Toggle\ Theme)
-  if [ $THEMECOL == "dark" ]; then
-    # make colors dark
-  else
-    # make colors light
-  fi
-# OMG sed i fucking love sed my lifestyle is sed
-  if [ $THEMECOL == "dark" ]; then
-    sed -i "s/^THEMECOL=.*/THEMECOL=light/g" $HOME/.config/qtile/autostart.sh
-  else
-    sed -i "s/^THEMECOL=.*/THEMECOL=dark/g" $HOME/.config/qtile/autostart.sh
-  fi
-  ;;
-  Change\ Theme)
-  choose2=$(printf "$themes" | $menu "Choose:" -l $(printf "$themes\n" | wc -l))
-  if [ $choose2 == "Wal" ]; then
-    wallustchange
-    sed -i "s/^colors = colors.*/colors = colors.$choose2/g" $HOME/.config/qtile/config.py
-    sed -i "s/^CURTHEME=.*/CURTHEME=$choose2/g" $HOME/.config/qtile/autostart.sh
-    qtile cmd-obj -o cmd -f reload_config
-    notify-send "Theme Tool" "Changed Theme to Wallust"
-  fi
-  sed -i "s/^colors = colors.*/colors = colors.$choose2/g" $HOME/.config/qtile/config.py
-  sed -i "s/^CURTHEME=.*/CURTHEME=$choose2/g" $HOME/.config/qtile/autostart.sh
-  qtile cmd-obj -o cmd -f reload_config
-  restoretheme
-  cp ~/.config/wallust/extrathemes/home-"$CURTHEME".nix ~/Dotfiles/nix-cfg/home.nix
-  home-manager switch --flake ~/Dotfiles/nix-cfg
-  notify-send "Theme Tool" "Changed Theme to $choose2"
-  ;;
-  *)
-    exit 1
-  ;;
-esac
-}
-
-printf "no way\n"
+choose2=$(printf "$themes" | $menu "Choose:" -R -l $(printf "$themes\n" | wc -l))
+if [ $choose2 == "Wal" ]; then
+  sed -i "s/^colors = colors.*/colors = colors.$choose2/g" $HOME/Dotfiles/.config/qtile/config.py
+  lowcasetheme
+  helixtheming
+  sed -i "s/$CURTHEME/$choose2/" $HOME/Dotfiles/.config/qtile/curtheme
+  pkexec nixos-rebuild switch --flake $HOME/Dotfiles/nix-cfg/ --impure
+  qtile cmd-obj -o cmd -f reload_config && $HOME/.config/qtile/autostart.sh
+  kill -s USR1 $(pidof st)
+  notify-send "Theme Tool" "Changed Theme to Wallust"
+fi
+sed -i "s/^colors = colors.*/colors = colors.$choose2/g" $HOME/Dotfiles/.config/qtile/config.py
+lowcasetheme
+helixtheming
+cp ~/.config/wallust/extrathemes/home-"$choose2".nix $HOME/Dotfiles/nix-cfg/home.nix
+sed -i "s/$CURTHEME/$choose2/" $HOME/Dotfiles/.config/qtile/curtheme
+pkexec nixos-rebuild switch --flake $HOME/Dotfiles/nix-cfg/ --impure
+qtile cmd-obj -o cmd -f reload_config && $HOME/.config/qtile/autostart.sh
+kill -s USR1 $(pidof st)
+notify-send "Theme Tool" "Changed Theme to $choose2"

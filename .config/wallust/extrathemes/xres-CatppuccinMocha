@@ -47,7 +47,7 @@ st.font:           JetBrainsMono Nerd Font:style:medium:pixelsize=16
 *color14: #89dceb
 
 ! LightGrey + White
-*color7:  #45475a
+*color7:  #cdd6f4
 *color15: #eff1f5
 
 dmenu.font: Ubuntu:pixelsize=14

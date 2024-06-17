@@ -15,50 +15,50 @@ st.borderpx: 2
 st.alpha: 0.8
 st.font:           JetBrainsMono Nerd Font:style:medium:pixelsize=16
 
-*background: #26233a
-*foreground: #e0def4
+*background: #282c34
+*foreground: #bbc2cf
 
 ! Black + DarkGrey
-*color0:  #191724
-*color8:  #21202e
+*color0:  #1c1f24
+*color8:  #e6e6e6
 
 ! DarkRed + Red
-*color1:  #eb6f92
-*color9:  #eb6f92
+*color1:  #ff6c6b
+*color9:  #ff6c6b
 
 ! DarkGreen + Green
-*color2:  #9ccfd8
-*color10: #9ccfd8
+*color2:  #98be65
+*color10: #98be65
 
 ! DarkYellow + Yellow
-*color3:  #f6c177
-*color11: #f6c177
+*color3:  #da8548
+*color11: #da8548
 
 ! DarkBlue + Blue
-*color4:  #31748f
-*color12: #31748f
+*color4:  #51afef
+*color12: #51afef
 
 ! DarkMagenta + Magenta
-*color5:  #c4a7e7
-*color13: #c4a7e7
+*color5:  #c678dd
+*color13: #c678dd
 
 ! DarkCyan + Cyan
-*color6:  #3e8fb0
-*color14: #3e8fb0
+*color6:  #46d9ff
+*color14: #46d9ff
 
 ! LightGrey + White
-*color7:  #403d52
-*color15: #faf4ed
+*color7:  #e6e6e6
+*color15: #efefef
 
 dmenu.font: Ubuntu:pixelsize=14
-dmenu.background: #26233a
-dmenu.selbackground: #c4a7e7
-dmenu.foreground: #e0def4
-dmenu.selforeground: #191724
+dmenu.background: #282c34
+dmenu.selbackground: #c678dd
+dmenu.foreground: #bbc2c2
+dmenu.selforeground: #1c1f24
 dmenu.selhlbackground: #000000
-dmenu.selhlforeground: #9ccfd8
+dmenu.selhlforeground: #98be65
 dmenu.hlbackground: #000000
-dmenu.hlforeground: #9ccfd8
-dmenu.midbackground: #191724
+dmenu.hlforeground: #98be65
+dmenu.midbackground: #1c1f24
 dmenu.midforeground: #d7d7d7
-dmenu.bordercolor: #c4a7e7
+dmenu.bordercolor: #c678dd

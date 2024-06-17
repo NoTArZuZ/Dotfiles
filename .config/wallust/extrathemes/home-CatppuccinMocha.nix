@@ -10,12 +10,12 @@
       name = "Bibata-Modern-Ice";
     };
     theme = {
-      name = "rose-pine-gtk";
-      package = pkgs.rose-pine-gtk-theme;
+      name = "Dracula";
+      package = pkgs.dracula-theme;
     };
     iconTheme = {
-      name = "rose-pine-icons";
-      package = pkgs.rose-pine-icon-theme;
+      name = "Dracula";
+      package = pkgs.dracula-icon-theme;
     };
     gtk3.extraConfig = {
       Settings = ''

@@ -85,5 +85,4 @@ stow .
 | and more!               | See ~/.config/qtile/vars or configuration.nix |
 
 ## TODO:
-* Write theme-changer script
-* Integrate wallust
+* Add more themes?
