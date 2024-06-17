@@ -199,9 +199,9 @@
   }))
   (st.overrideAttrs (oldAttrs: rec {
     src = builtins.fetchTarball {
-      url = "https://github.com/lukesmithxyz/st/archive/master.tar.gz";
+      url = "https://github.com/NoTArZuZ/st-sus/archive/master.tar.gz";
     };
-    buildInputs = oldAttrs.buildInputs ++ [ harfbuzz fontconfig xorg.libX11 xorg.libXft ];
+    buildInputs = oldAttrs.buildInputs ++ [ harfbuzz fontconfig xorg.libX11 xorg.libXft xorg.libXcursor libsixel imlib2 gd ];
   }))
   ];
 

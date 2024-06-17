@@ -32,6 +32,8 @@ And then reboot!
 cd ~/Dotfiles/nix-cfg
 git pull
 sudo nixos-rebuild switch --flake .
+cd ..
+stow .
 ```
 
 ## Keybinds:
