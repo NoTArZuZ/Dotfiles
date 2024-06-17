@@ -8,6 +8,7 @@ trackplaystuff() {
   trackchoose=$(printf "Insert to Queue\nAdd to Queue\nPlay only" | $menu "Choose:" -l 3 -R)
   case $trackchoose in
     Insert\ to\ Queue)
+      mpc -q update
       tracktoplay=$(mpc listall | $menu "Track to add:" -R -l $(mpc listall | wc -l))
       mpc -q insert "$tracktoplay"
       mpc -q play
@@ -15,6 +16,7 @@ trackplaystuff() {
       exit 0
     ;;
     Add\ to\ Queue)
+      mpc -q update
       tracktoplay=$(mpc listall | $menu "Track to add:" -R -l $(mpc listall | wc -l))
       mpc -q add "$tracktoplay"
       mpc -q play
@@ -22,6 +24,7 @@ trackplaystuff() {
       exit 0
     ;;
     Play\ only)
+      mpc -q update
       tracktoplay=$(mpc listall | $menu "Track to play:" -R -l $(mpc listall | wc -l))
       mpc -q clear
       mpc -q add "$tracktoplay"

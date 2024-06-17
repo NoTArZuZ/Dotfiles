@@ -12,8 +12,7 @@ Heavily inspired by DistroTube.
 
 ```
 git clone https://github.com/NoTArZuZ/Dotfiles ~/Dotfiles
-mv ~/Dotfiles/nix-cfg ~/nix-cfg
-cd ~/nix-cfg
+cd ~/Dotfiles/nix-cfg
 sudo nixos-rebuild switch --flake .
 ```
 
@@ -32,7 +31,7 @@ And then reboot!
 cd ~/Dotfiles/nix-cfg
 git pull
 sudo nixos-rebuild switch --flake .
-cd ..
+cd ~/Dotfiles
 stow .
 ```
 

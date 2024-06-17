@@ -11,11 +11,13 @@ case $choose in
     videoformat=$(printf "mp4\nmkv\navi" | $menu "Video format:" -l 3)
     videolink=$(echo "" | $menu "Video link:")
     $ytdown --remux $videoformat --merge $videoformat "$videolink" -P $downdir
+    notify-send "YT Download Tool" "Successfully downloaded $videolink $videoformat"
   ;;
   Audio)
     audioformat=$(printf "mp3\nvorbis\nwav" | $menu "Audio format:" -l 3)
     videolink=$(echo "" | $menu "Video link:")
     $ytdown -x --audio-format $audioformat "$videolink" -P $downdir
+    notify-send "YT Download Tool" "Successfully downloaded $videolink $audioformat"
   ;;
   *)
     exit 1

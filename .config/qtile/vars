@@ -21,6 +21,8 @@ bgdir="$HOME/Pictures/Wallpapers"
 scrshotdir="$HOME/Pictures/Screenshots"
 notedir="$HOME/Notes/" # / at the end
 scrdir="$HOME/.config/qtile/scripts/" # / at the end
+dotdir="$HOME/Dotfiles/.config/" # / at the end
+nixcfgdir="$HOME/Dotfiles/nix-cfg/" # / at the end
 # themes
 themes="DoomOne\nDracula\nWal" # please write your themes in this var (case sensitive)
 curtheme="DoomOne"
