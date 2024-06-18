@@ -8,7 +8,7 @@ Xcursor.theme: Bibata-Modern-Ice
 Xcursor.size: 24
 
 ! window padding
-! st.borderpx: 10
+st.borderpx: 2
 
 !-- values between 0.1  - 1.0 --! 
 
@@ -52,13 +52,13 @@ st.font:           JetBrainsMono Nerd Font:style:medium:pixelsize=16
 
 dmenu.font: Ubuntu:pixelsize=16
 dmenu.background: {background}
-dmenu.selbackground: {color5}
+dmenu.selbackground: {color13}
 dmenu.foreground: {foreground}
 dmenu.selforeground: {color1}
 dmenu.selhlbackground: #000000
-dmenu.selhlforeground: #98be65
+dmenu.selhlforeground: {color10}
 dmenu.hlbackground: #000000
-dmenu.hlforeground: #98be65
+dmenu.hlforeground: {color10}
 dmenu.midbackground: {color1}
-dmenu.midforeground: {color7}
-dmenu.bordercolor: {color5}
+dmenu.midforeground: {color15}
+dmenu.bordercolor: {color13}

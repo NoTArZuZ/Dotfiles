@@ -34,7 +34,7 @@ icon_theme = "Qogir"
 
 sticky_history = false
 
-dmenu = "dmenu -p 'Context Menu'"
+dmenu = "dmenu -c -bw 2 -l 10"
 
 browser = "firefox"
 

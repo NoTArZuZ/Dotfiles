@@ -9,6 +9,7 @@ set_wallpaper() {
   $imgsetbg $setwallpaper
   ln -sf $setwallpaper $HOME/.cache/wallcache
   notify-send "Wallpaper Tool" "Changed wallpaper to $setwallpaper"
+  exec ~/Dotfiles/.config/qtile/scripts/theme-changer -w
 }
 
 rand_wallpaper() {
@@ -16,6 +17,7 @@ rand_wallpaper() {
   $imgsetbg $setwallpaper
   ln -sf $setwallpaper $HOME/.cache/wallcache
   notify-send "Wallpaper Tool" "Changed wallpaper to $setwallpaper"
+  exec ~/Dotfiles/.config/qtile/scripts/theme-changer -w
 }
 
 while test $# -gt 0; do

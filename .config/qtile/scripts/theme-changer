@@ -8,22 +8,25 @@ set -euo pipefail
 # this thing gonna be MASSIVE
 # for now qtile, dunst, helix, xresources (gtk and qt through home-manager) is supported
 
-restoretheme() {
-  if [ $CURTHEME == "Wal" ]; then
-    wallust run ~/.cache/wallcache
-  else
-    xrdb -merge ~/.Xresources
-  fi
+waltheming() {
+wallust run ~/.cache/wallcache
+qtile cmd-obj -o cmd -f reload_config && $HOME/.config/qtile/autostart.sh
+kill -s USR1 $(pidof st)
+pkill dunst
 }
 
 while test $# -gt 0; do
   case "$1" in
-    -r)
-      restoretheme
-      exit 0
+    -w)
+      if [ $CURTHEME == "Wal" ]; then
+        waltheming
+        exit 0
+      else
+        exit 0
+      fi
     ;;
     *)
-      printf "[-r] - restore theme\n"
+      printf "[-w] - wallust run\n"
       exit 1
     ;;
   esac
@@ -33,20 +36,19 @@ choose2=$(printf "$themes" | $menu "Choose:" -R -l $(printf "$themes\n" | wc -l)
 if [ $choose2 == "Wal" ]; then
   sed -i "s/^colors = colors.*/colors = colors.$choose2/g" $HOME/Dotfiles/.config/qtile/config.py
   sed -i "s/$CURTHEME/$choose2/" $HOME/Dotfiles/.config/helix/config.toml
+  sed -i "s/$CURTHEME/$choose2/" $HOME/Dotfiles/.config/qtile/curtheme
+  waltheming
+  notify-send "Theme Tool" "Changed Theme to Wallust"
+else
+  sed -i "s/^colors = colors.*/colors = colors.$choose2/g" $HOME/Dotfiles/.config/qtile/config.py
+  sed -i "s/$CURTHEME/$choose2/" $HOME/Dotfiles/.config/helix/config.toml
+  cp ~/Dotfiles/.config/wallust/extrathemes/home-"$choose2".nix $HOME/Dotfiles/nix-cfg/home.nix
+  cp ~/Dotfiles/.config/wallust/extrathemes/dunst-"$choose2" $HOME/Dotfiles/.config/dunst/dunstrc
+  cp ~/Dotfiles/.config/wallust/extrathemes/xres-"$choose2" ~/Dotfiles/.Xresources
+  sed -i "s/$CURTHEME/$choose2/" $HOME/Dotfiles/.config/qtile/curtheme
   pkexec nixos-rebuild switch --flake $HOME/Dotfiles/nix-cfg/ --impure
   qtile cmd-obj -o cmd -f reload_config && $HOME/.config/qtile/autostart.sh
   kill -s USR1 $(pidof st)
   pkill dunst
-  notify-send "Theme Tool" "Changed Theme to Wallust"
+  notify-send "Theme Tool" "Changed Theme to $choose2"
 fi
-sed -i "s/^colors = colors.*/colors = colors.$choose2/g" $HOME/Dotfiles/.config/qtile/config.py
-sed -i "s/$CURTHEME/$choose2/" $HOME/Dotfiles/.config/helix/config.toml
-cp ~/Dotfiles/.config/wallust/extrathemes/home-"$choose2".nix $HOME/Dotfiles/nix-cfg/home.nix
-cp ~/Dotfiles/.config/wallust/extrathemes/dunst-"$choose2" $HOME/Dotfiles/.config/dunst/dunstrc
-cp ~/Dotfiles/.config/wallust/extrathemes/xres-"$choose2" ~/Dotfiles/.Xresources
-sed -i "s/$CURTHEME/$choose2/" $HOME/Dotfiles/.config/qtile/curtheme
-pkexec nixos-rebuild switch --flake $HOME/Dotfiles/nix-cfg/ --impure
-qtile cmd-obj -o cmd -f reload_config && $HOME/.config/qtile/autostart.sh
-kill -s USR1 $(pidof st)
-pkill dunst
-notify-send "Theme Tool" "Changed Theme to $choose2"
