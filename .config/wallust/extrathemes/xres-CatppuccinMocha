@@ -20,7 +20,7 @@ st.font:           JetBrainsMono Nerd Font:style:medium:pixelsize=16
 
 ! Black + DarkGrey
 *color0:  #11111b
-*color8:  #313244
+*color8:  #a6adc8
 
 ! DarkRed + Red
 *color1:  #f38ba8
@@ -60,5 +60,5 @@ dmenu.selhlforeground: #a6e3a1
 dmenu.hlbackground: #000000
 dmenu.hlforeground: #a6e3a1
 dmenu.midbackground: #11111b
-dmenu.midforeground: #cdd6f4
+dmenu.midforeground: #b4befe
 dmenu.bordercolor: #cba6f7

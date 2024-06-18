@@ -11,9 +11,8 @@ set -euo pipefail
 restoretheme() {
   if [ $CURTHEME == "Wal" ]; then
     wallust run ~/.cache/wallcache
-    xrdb -merge ~/.cache/colors-xresources
   else
-    xrdb -merge ~/.config/wallust/extrathemes/xres-$CURTHEME
+    xrdb -merge ~/.Xresources
   fi
 }
 
@@ -34,7 +33,6 @@ choose2=$(printf "$themes" | $menu "Choose:" -R -l $(printf "$themes\n" | wc -l)
 if [ $choose2 == "Wal" ]; then
   sed -i "s/^colors = colors.*/colors = colors.$choose2/g" $HOME/Dotfiles/.config/qtile/config.py
   sed -i "s/$CURTHEME/$choose2/" $HOME/Dotfiles/.config/helix/config.toml
-  cp ~/.cache/colors-dunstrc $HOME/Dotfiles/.config/dunst/dunstrc
   pkexec nixos-rebuild switch --flake $HOME/Dotfiles/nix-cfg/ --impure
   qtile cmd-obj -o cmd -f reload_config && $HOME/.config/qtile/autostart.sh
   kill -s USR1 $(pidof st)
@@ -45,6 +43,7 @@ sed -i "s/^colors = colors.*/colors = colors.$choose2/g" $HOME/Dotfiles/.config/
 sed -i "s/$CURTHEME/$choose2/" $HOME/Dotfiles/.config/helix/config.toml
 cp ~/Dotfiles/.config/wallust/extrathemes/home-"$choose2".nix $HOME/Dotfiles/nix-cfg/home.nix
 cp ~/Dotfiles/.config/wallust/extrathemes/dunst-"$choose2" $HOME/Dotfiles/.config/dunst/dunstrc
+cp ~/Dotfiles/.config/wallust/extrathemes/xres-"$choose2" ~/Dotfiles/.Xresources
 sed -i "s/$CURTHEME/$choose2/" $HOME/Dotfiles/.config/qtile/curtheme
 pkexec nixos-rebuild switch --flake $HOME/Dotfiles/nix-cfg/ --impure
 qtile cmd-obj -o cmd -f reload_config && $HOME/.config/qtile/autostart.sh

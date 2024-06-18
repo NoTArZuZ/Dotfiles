@@ -25,7 +25,7 @@ DoomOne = [
     ["#c678dd", "#c678dd"], # color06
     ["#46d9ff", "#46d9ff"]  # color15
     ]
-    
+
 Dracula  = [
     ["#282a36", "#282a36"], # bg
     ["#f8f8f2", "#f8f8f2"], # fg
@@ -49,7 +49,7 @@ Gruvbox  = [
     ["#d3869b", "#d3869b"], # color06
     ["#b8bb26", "#b8bb26"], # color11
     ]
-    
+
 CatppuccinMocha  = [
     ["#1e1e2e", "#1e1e2e"], # bg
     ["#cdd6f4", "#cdd6f4"], # fg
@@ -61,7 +61,7 @@ CatppuccinMocha  = [
     ["#cba6f7", "#cba6f7"], # color06
     ["#89dceb", "#89dceb"], # color11
     ]
-    
+
 RosePine  = [
     ["#26233a", "#26233a"], # bg
     ["#e0def4", "#e0def4"], # fg
