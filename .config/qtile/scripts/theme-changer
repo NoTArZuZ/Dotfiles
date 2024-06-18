@@ -6,32 +6,7 @@ source ~/.config/qtile/curtheme
 set -euo pipefail
 
 # this thing gonna be MASSIVE
-# for now qtile, helix, xresources (gtk and qt through home-manager) is supported
-
-lowcasetheme() {
-  lowcasechoose=$(echo $choose2 | tr '[:upper:]' '[:lower:]')
-  if [ $CURTHEME == "CatppuccinMocha" ]; then
-    lowcasecurtheme="catppuccin_mocha"
-  elif [ $CURTHEME = "RosePine" ]; then
-    lowcasecurtheme="rose_pine"
-  elif [ $CURTHEME = "Wal" ]; then
-    lowcasecurtheme="base16_transparent"
-  else
-    lowcasecurtheme=$(echo $CURTHEME | tr '[:upper:]' '[:lower:]')
-  fi
-}
-
-helixtheming() {
-  if [ $choose2 == "CatppuccinMocha" ]; then
-    sed -i "s/$lowcasecurtheme/catppuccin_mocha/" $HOME/Dotfiles/.config/helix/config.toml
-  elif [ $choose2 == "RosePine" ]; then
-    sed -i "s/$lowcasecurtheme/rose_pine/" $HOME/Dotfiles/.config/helix/config.toml
-  elif [ $choose2 == "Wal" ]; then
-    sed -i "s/$lowcasecurtheme/base16_transparent/" $HOME/Dotfiles/.config/helix/config.toml
-  else
-    sed -i "s/$lowcasecurtheme/$lowcasechoose/" $HOME/Dotfiles/.config/helix/config.toml
-  fi
-}
+# for now qtile, dunst, helix, xresources (gtk and qt through home-manager) is supported
 
 restoretheme() {
   if [ $CURTHEME == "Wal" ]; then
@@ -58,20 +33,21 @@ done
 choose2=$(printf "$themes" | $menu "Choose:" -R -l $(printf "$themes\n" | wc -l))
 if [ $choose2 == "Wal" ]; then
   sed -i "s/^colors = colors.*/colors = colors.$choose2/g" $HOME/Dotfiles/.config/qtile/config.py
-  lowcasetheme
-  helixtheming
-  sed -i "s/$CURTHEME/$choose2/" $HOME/Dotfiles/.config/qtile/curtheme
+  sed -i "s/$CURTHEME/$choose2/" $HOME/Dotfiles/.config/helix/config.toml
+  cp ~/.cache/colors-dunstrc $HOME/Dotfiles/.config/dunst/dunstrc
   pkexec nixos-rebuild switch --flake $HOME/Dotfiles/nix-cfg/ --impure
   qtile cmd-obj -o cmd -f reload_config && $HOME/.config/qtile/autostart.sh
   kill -s USR1 $(pidof st)
+  pkill dunst
   notify-send "Theme Tool" "Changed Theme to Wallust"
 fi
 sed -i "s/^colors = colors.*/colors = colors.$choose2/g" $HOME/Dotfiles/.config/qtile/config.py
-lowcasetheme
-helixtheming
-cp ~/.config/wallust/extrathemes/home-"$choose2".nix $HOME/Dotfiles/nix-cfg/home.nix
+sed -i "s/$CURTHEME/$choose2/" $HOME/Dotfiles/.config/helix/config.toml
+cp ~/Dotfiles/.config/wallust/extrathemes/home-"$choose2".nix $HOME/Dotfiles/nix-cfg/home.nix
+cp ~/Dotfiles/.config/wallust/extrathemes/dunst-"$choose2" $HOME/Dotfiles/.config/dunst/dunstrc
 sed -i "s/$CURTHEME/$choose2/" $HOME/Dotfiles/.config/qtile/curtheme
 pkexec nixos-rebuild switch --flake $HOME/Dotfiles/nix-cfg/ --impure
 qtile cmd-obj -o cmd -f reload_config && $HOME/.config/qtile/autostart.sh
 kill -s USR1 $(pidof st)
+pkill dunst
 notify-send "Theme Tool" "Changed Theme to $choose2"
