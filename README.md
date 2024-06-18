@@ -37,7 +37,7 @@ stow .
 
 ## Keybinds:
 
-| Keys                 | Description                            |
+| Keys                 | Action                                 |
 | -------------------- | -------------------------------------- |
 | Super + Enter        | Launch st                              |
 | Super + w            | Kill focused window                    |
@@ -55,6 +55,24 @@ stow .
 | Super + g            | Launch dmenu script hub                |
 | Super + Shift + n    | Send previous notification             |
 | and more!            | See ~/.config/qtile/config.py          |
+
+## Dmenu scripts:
+
+| Script         | Description                                                       |
+| -------------- | ----------------------------------------------------------------- |
+| cli-utils      | Launches terminal with CLI programs                               |
+| conf-edit      | Launches editor with config you chosen                            |
+| currency-conv  | Converts currencies (copies result to clipboard)                  |
+| dunst-history  | Very bad notification viewer                                      |
+| lang-translate | Translates word or sentence (copies result to clipboard)          |
+| maim-scrshot   | Screenshots using maim                                            |
+| menu-calc      | Very limited dmenu calculator (copies result to clipboard)        |
+| menu-colpicker | Dmenu colorpicker (saves results to file and copies to clipboard) |
+| menu-music     | Control mpd with Dmenu through mpc                                |
+| set-bg         | Sets wallpaper using nsxiv and feh (it can also do random)        |
+| temp-notes     | Create, copy, read, edit, delete notes (stored in ~/Notes)        |
+| theme-changer  | Very bad theme changer which creates nixos generations            |
+| yt-download    | Download videos or audio using yt-dlp                             |
 
 ## Installed packages:
 
