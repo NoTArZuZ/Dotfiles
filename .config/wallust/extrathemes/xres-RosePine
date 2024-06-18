@@ -60,5 +60,5 @@ dmenu.selhlforeground: #9ccfd8
 dmenu.hlbackground: #000000
 dmenu.hlforeground: #9ccfd8
 dmenu.midbackground: #191724
-dmenu.midforeground: #d7d7d7
+dmenu.midforeground: #e0def4
 dmenu.bordercolor: #c4a7e7
