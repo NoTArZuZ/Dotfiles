@@ -190,6 +190,26 @@
   stow
   polkit_gnome
   eza
+  unzip
+# themes
+  # gruvbox-dark
+  gruvbox-dark-gtk
+  # Dracula
+  dracula-theme
+  # rose-pine-gtk
+  rose-pine-gtk-theme
+  # Qogir-Dark
+  qogir-theme
+# icon themes
+  # Papirus-Dark
+  papirus-icon-theme
+  # Qogir
+  qogir-icon-theme
+  # rose-pine-gtk
+  rose-pine-icon-theme
+  # Dracula
+  dracula-icon-theme
+# home-manager
   home-manager
   (dmenu.overrideAttrs (oldAttrs: rec {
     src = builtins.fetchTarball {

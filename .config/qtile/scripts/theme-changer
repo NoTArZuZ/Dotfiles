@@ -15,6 +15,59 @@ kill -s USR1 $(pidof st)
 pkill dunst
 }
 
+gtktheming() {
+  case $CURTHEME in
+    "DoomOne")
+      gtktheme="Qogir-Dark"
+      icontheme="Qogir"
+    ;;
+    "Gruvbox")
+      gtktheme="gruvbox-dark"
+      icontheme="Papirus-Dark"
+    ;;
+    "Dracula")
+      gtktheme="Dracula"
+      icontheme="Dracula"
+    ;;
+    "CatppuccinMocha")
+      gtktheme="Dracula"
+      icontheme="Dracula"
+    ;;
+    "RosePine")
+      gtktheme="rose-pine-gtk"
+      icontheme="Dracula"
+    ;;
+  esac
+  case $choose2 in
+    "DoomOne")
+      choosegtktheme="Qogir-Dark"
+      chooseicontheme="Qogir"
+    ;;
+    "Gruvbox")
+      choosegtktheme="gruvbox-dark"
+      chooseicontheme="Papirus-Dark"
+    ;;
+    "Dracula")
+      choosegtktheme="Dracula"
+      chooseicontheme="Dracula"
+    ;;
+    "CatppuccinMocha")
+      choosegtktheme="Dracula"
+      chooseicontheme="Dracula"
+    ;;
+    "RosePine")
+      choosegtktheme="rose-pine-gtk"
+      chooseicontheme="rose-pine-gtk"
+    ;;
+  esac
+  sed -i "s/$icontheme/$chooseicontheme/" $HOME/Dotfiles/.gtkrc-2.0
+  sed -i "s/$gtktheme/$choosegtktheme/" $HOME/Dotfiles/.gtkrc-2.0
+  sed -i "s/$icontheme/$chooseicontheme/" $HOME/Dotfiles/.config/gtk-3.0/settings.ini
+  sed -i "s/$gtktheme/$choosegtktheme/" $HOME/Dotfiles/.config/gtk-3.0/settings.ini
+  sed -i "s/$gtktheme/$choosegtktheme/" $HOME/Dotfiles/.config/xsettingsd/xsettingsd.conf
+  sed -i "s/$icontheme/$chooseicontheme/" $HOME/Dotfiles/.config/xsettingsd/xsettingsd.conf
+}
+
 while test $# -gt 0; do
   case "$1" in
     -w)
@@ -42,13 +95,13 @@ if [ $choose2 == "Wal" ]; then
 else
   sed -i "s/^colors = colors.*/colors = colors.$choose2/g" $HOME/Dotfiles/.config/qtile/config.py
   sed -i "s/$CURTHEME/$choose2/" $HOME/Dotfiles/.config/helix/config.toml
-  cp ~/Dotfiles/.config/wallust/extrathemes/home-"$choose2".nix $HOME/Dotfiles/nix-cfg/home.nix
   cp ~/Dotfiles/.config/wallust/extrathemes/dunst-"$choose2" $HOME/Dotfiles/.config/dunst/dunstrc
   cp ~/Dotfiles/.config/wallust/extrathemes/xres-"$choose2" $HOME/Dotfiles/.Xresources
+  gtktheming
   sed -i "s/$CURTHEME/$choose2/" $HOME/Dotfiles/.config/qtile/curtheme
-  pkexec nixos-rebuild switch --flake $HOME/Dotfiles/nix-cfg/ --impure
   qtile cmd-obj -o cmd -f reload_config && $HOME/.config/qtile/autostart.sh
   kill -s USR1 $(pidof st)
   pkill dunst
+  sleep 1
   notify-send "Theme Tool" "Changed Theme to $choose2"
 fi
