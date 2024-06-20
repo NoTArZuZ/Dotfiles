@@ -34,7 +34,7 @@ gtktheming() {
       icontheme="Dracula"
     ;;
     "RosePine")
-      gtktheme="rose-pine-gtk"
+      gtktheme="Dracula"
       icontheme="Dracula"
     ;;
   esac
@@ -56,16 +56,16 @@ gtktheming() {
       chooseicontheme="Dracula"
     ;;
     "RosePine")
-      choosegtktheme="rose-pine-gtk"
-      chooseicontheme="rose-pine-gtk"
+      choosegtktheme="Dracula"
+      chooseicontheme="Dracula"
     ;;
   esac
-  sed -i "s/$icontheme/$chooseicontheme/" $HOME/Dotfiles/.gtkrc-2.0
-  sed -i "s/$gtktheme/$choosegtktheme/" $HOME/Dotfiles/.gtkrc-2.0
-  sed -i "s/$icontheme/$chooseicontheme/" $HOME/Dotfiles/.config/gtk-3.0/settings.ini
-  sed -i "s/$gtktheme/$choosegtktheme/" $HOME/Dotfiles/.config/gtk-3.0/settings.ini
-  sed -i "s/$gtktheme/$choosegtktheme/" $HOME/Dotfiles/.config/xsettingsd/xsettingsd.conf
-  sed -i "s/$icontheme/$chooseicontheme/" $HOME/Dotfiles/.config/xsettingsd/xsettingsd.conf
+  sed -i "2s/$icontheme/$chooseicontheme/" $HOME/Dotfiles/.gtkrc-2.0
+  sed -i "3s/$gtktheme/$choosegtktheme/" $HOME/Dotfiles/.gtkrc-2.0
+  sed -i "4s/$icontheme/$chooseicontheme/" $HOME/Dotfiles/.config/gtk-3.0/settings.ini
+  sed -i "5s/$gtktheme/$choosegtktheme/" $HOME/Dotfiles/.config/gtk-3.0/settings.ini
+  sed -i "1s/$gtktheme/$choosegtktheme/" $HOME/Dotfiles/.config/xsettingsd/xsettingsd.conf
+  sed -i "2s/$icontheme/$chooseicontheme/" $HOME/Dotfiles/.config/xsettingsd/xsettingsd.conf
 }
 
 while test $# -gt 0; do

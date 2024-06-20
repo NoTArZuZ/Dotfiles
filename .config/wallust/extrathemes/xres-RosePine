@@ -15,7 +15,7 @@ st.borderpx: 2
 st.alpha: 1.0
 st.font:           JetBrainsMono Nerd Font:style:medium:pixelsize=16
 
-*background: #26233a
+*background: #191724
 *foreground: #e0def4
 
 ! Black + DarkGrey
@@ -27,8 +27,8 @@ st.font:           JetBrainsMono Nerd Font:style:medium:pixelsize=16
 *color9:  #eb6f92
 
 ! DarkGreen + Green
-*color2:  #9ccfd8
-*color10: #9ccfd8
+*color2:  #3e8fb0
+*color10: #3e8fb0
 
 ! DarkYellow + Yellow
 *color3:  #f6c177
@@ -43,8 +43,8 @@ st.font:           JetBrainsMono Nerd Font:style:medium:pixelsize=16
 *color13: #c4a7e7
 
 ! DarkCyan + Cyan
-*color6:  #3e8fb0
-*color14: #3e8fb0
+*color6:  #9ccfd8
+*color14: #9ccfd8
 
 ! LightGrey + White
 *color7:  #e0def4
