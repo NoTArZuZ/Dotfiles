@@ -10,7 +10,8 @@ set -euo pipefail
 
 waltheming() {
 wallust run ~/.cache/wallcache
-qtile cmd-obj -o cmd -f reload_config && $HOME/.config/qtile/autostart.sh
+qtile cmd-obj -o cmd -f reload_config
+xrdb -merge ~/.Xresources
 kill -s USR1 $(pidof st)
 pkill dunst
 }
@@ -99,7 +100,8 @@ else
   cp ~/Dotfiles/.config/qthemes/xres-"$choose2" $HOME/Dotfiles/.Xresources
   gtktheming
   sed -i "s/$CURTHEME/$choose2/" $HOME/Dotfiles/.config/qtile/curtheme
-  qtile cmd-obj -o cmd -f reload_config && $HOME/.config/qtile/autostart.sh
+  qtile cmd-obj -o cmd -f reload_config
+  xrdb -merge ~/.Xresources
   kill -s USR1 $(pidof st)
   pkill dunst
   sleep 1
