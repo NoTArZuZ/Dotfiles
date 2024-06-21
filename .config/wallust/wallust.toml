@@ -6,10 +6,10 @@ new_engine = true
 
 [templates]
 qtile.template = 'templates/colors-qtile.py'
-qtile.target = '~/Dotfiles/.config/qtile/colors.py'
+qtile.target = '~/Dotfiles/.config/qtile/wal.py'
 
 dunst.template = 'templates/colors-dunstrc'
 dunst.target = '~/Dotfiles/.config/dunst/dunstrc'
 
 xresources.template = 'templates/colors-xresources'
-xresources.target = '~/Dotfiles/.Xresources'
+xresources.target = '~/Dotfiles/.config/qthemes/xres-Wal'

@@ -1,0 +1,47 @@
+*background: #060409
+*foreground: #FDEDE5
+
+! Black + DarkGrey
+*color0:  #060409
+*color8:  #AA9A93
+
+! DarkRed + Red
+*color1:  #B39AB7
+*color9:  #B39AB7
+
+! DarkGreen + Green
+*color2:  #A1A6BC
+*color10: #A1A6BC
+
+! DarkYellow + Yellow
+*color3:  #C4B0BE
+*color11: #C4B0BE
+
+! DarkBlue + Blue
+*color4:  #F7B6B7
+*color12: #F7B6B7
+
+! DarkMagenta + Magenta
+*color5:  #E4BFBD
+*color13: #E4BFBD
+
+! DarkCyan + Cyan
+*color6:  #FACCB7
+*color14: #FACCB7
+
+! LightGrey + White
+*color7:  #F4DDD2
+*color15: #F4DDD2
+
+dmenu.font: Ubuntu:pixelsize=16
+dmenu.background: #060409
+dmenu.selbackground: #E4BFBD
+dmenu.foreground: #FDEDE5
+dmenu.selforeground: #B39AB7
+dmenu.selhlbackground: #000000
+dmenu.selhlforeground: #A1A6BC
+dmenu.hlbackground: #000000
+dmenu.hlforeground: #A1A6BC
+dmenu.midbackground: #B39AB7
+dmenu.midforeground: #F4DDD2
+dmenu.bordercolor: #E4BFBD
