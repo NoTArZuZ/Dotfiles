@@ -1,14 +1,17 @@
 format = '''
-[┌─|$username$custom$hostname $shell|─|$time|─> $directory$cmd_duration$git_branch$git_commit$git_status](bold white)
-[└─$character$status](bold white)'''
+[\[$username$hostname\]](bold red)[$shell $time $directory$cmd_duration$git_branch$git_commit$git_status](bold white)
+[$character$status](bold white)'''
 
 [character]
-success_symbol = '[\$](bold green)'
-error_symbol = '[\$](bold red)'
+success_symbol = '[➜](bold green)'
+error_symbol = '[➜](bold red)'
 
 [username]
 format = "[$user](bold blue)[@](bold green)"
 show_always = true
+
+[directory]
+style = "bold underline italic blue"
 
 [hostname]
 ssh_only = false
@@ -25,8 +28,9 @@ style = "bold red"
 disabled = false
 
 [shell]
-disabled = false
-format = "via [$indicator](bold red)"
+# disabled = false
+disabled = true
+format = "via [$indicator](bold cyan)"
 
 [git_commit]
 only_detached = false

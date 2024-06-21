@@ -1,0 +1,1 @@
+/home/sus/Dotfiles/.config/qtile/colors.py

@@ -95,8 +95,8 @@ if [ $choose2 == "Wal" ]; then
 else
   sed -i "s/^colors = colors.*/colors = colors.$choose2/g" $HOME/Dotfiles/.config/qtile/config.py
   sed -i "s/$CURTHEME/$choose2/" $HOME/Dotfiles/.config/helix/config.toml
-  cp ~/Dotfiles/.config/wallust/extrathemes/dunst-"$choose2" $HOME/Dotfiles/.config/dunst/dunstrc
-  cp ~/Dotfiles/.config/wallust/extrathemes/xres-"$choose2" $HOME/Dotfiles/.Xresources
+  cp ~/Dotfiles/.config/qthemes/dunst-"$choose2" $HOME/Dotfiles/.config/dunst/dunstrc
+  cp ~/Dotfiles/.config/qthemes/xres-"$choose2" $HOME/Dotfiles/.Xresources
   gtktheming
   sed -i "s/$CURTHEME/$choose2/" $HOME/Dotfiles/.config/qtile/curtheme
   qtile cmd-obj -o cmd -f reload_config && $HOME/.config/qtile/autostart.sh
