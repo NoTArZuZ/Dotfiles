@@ -15,7 +15,7 @@ Wal = [
     ]
 
 DoomOne = [
-    ["#282c34", "#282c34"], # bg
+    ["#282c34b4", "#282c34b4"], # bg
     ["#bbc2cf", "#bbc2cf"], # fg
     ["#1c1f24", "#1c1f24"], # color01
     ["#ff6c6b", "#ff6c6b"], # color02
@@ -27,7 +27,7 @@ DoomOne = [
     ]
 
 Dracula  = [
-    ["#282a36", "#282a36"], # bg
+    ["#282a36b4", "#282a36b4"], # bg
     ["#f8f8f2", "#f8f8f2"], # fg
     ["#000000", "#000000"], # color01
     ["#ff5555", "#ff5555"], # color02
@@ -39,7 +39,7 @@ Dracula  = [
     ]
 
 Gruvbox  = [
-    ["#282828", "#282828"], # bg
+    ["#282828b4", "#282828b4"], # bg
     ["#ebdbb2", "#ebdbb2"], # fg
     ["#000000", "#000000"], # color01
     ["#fb4934", "#fb4934"], # color02
@@ -51,7 +51,7 @@ Gruvbox  = [
     ]
 
 CatppuccinMocha  = [
-    ["#1e1e2e", "#1e1e2e"], # bg
+    ["#1e1e2eb4", "#1e1e2eb4"], # bg
     ["#cdd6f4", "#cdd6f4"], # fg
     ["#11111b", "#11111b"], # color01
     ["#f38ba8", "#f38ba8"], # color02
@@ -63,7 +63,7 @@ CatppuccinMocha  = [
     ]
 
 RosePine  = [
-    ["#26233a", "#26233a"], # bg
+    ["#26233ab4", "#26233ab4"], # bg
     ["#e0def4", "#e0def4"], # fg
     ["#191724", "#191724"], # color01
     ["#eb6f92", "#eb6f92"], # color02
