@@ -33,7 +33,6 @@
 *color7:  #cdd6f4
 *color15: #eff1f5
 
-dmenu.font: Ubuntu:pixelsize=14
 dmenu.background: #1e1e2e
 dmenu.selbackground: #cba6f7
 dmenu.foreground: #cdd6f4
