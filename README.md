@@ -7,9 +7,9 @@ NoTArZuZ's dotfiles for NixOS 24.05 Heavily inspired by DistroTube.
 <div align="center"><table><tr><td>Gruvbox</td><td>Catppuccin Mocha</td></tr><tr><td>
 <img src="https://cdn.discordapp.com/attachments/693827752532377641/1254125255220265001/1719076898.png?ex=66785aa9&is=66770929&hm=b4806c915d1c2721d196b658a3a1e76572c09a9feaf0444a48b74effa9362184&"/></td><td>
 <img src="https://cdn.discordapp.com/attachments/693827752532377641/1254125255690162186/1719076934.png?ex=66785aa9&is=66770929&hm=55646c203c906c73e7ad89922f80d9c5c474575d75b4c966869241b02f54c99a&"/></td></tr>
-<tr><td>Dracula</td><td>Rose Pine</td></tr><tr><td>
+<tr><td>Dracula</td><td>Everforest</td></tr><tr><td>
 <img src="https://cdn.discordapp.com/attachments/693827752532377641/1254125256134623345/1719076979.png?ex=66785aa9&is=66770929&hm=b614f1ec6bef5d815ec1ed1563fef878baddd3bad912c04a86e382993e75f566&"/></td><td>
-<img src="https://cdn.discordapp.com/attachments/693827752532377641/1254125256612909227/1719077023.png?ex=66785aa9&is=66770929&hm=3462f0698bf4736d9b5be8e0ac4d55fd98ae01874a2bee932cde602f131fb1ab&"/></td></tr>
+<img src="https://cdn.discordapp.com/attachments/836500386390605846/1254176168782073947/1719089096.png?ex=66788a14&is=66773894&hm=5efd6fa5e3552419b08f189b6de150cf67af8fcb710f2fa007cbbe2819f672d3&"/></td></tr>
 </table></div>
 
 > [!IMPORTANT]

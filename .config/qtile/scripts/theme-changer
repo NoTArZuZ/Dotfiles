@@ -39,9 +39,9 @@ gtktheming() {
       choosegtktheme="Dracula"
       chooseicontheme="Dracula"
     ;;
-    "RosePine")
-      choosegtktheme="Dracula"
-      chooseicontheme="Dracula"
+    "Everforest")
+      choosegtktheme="Qogir-Dark"
+      chooseicontheme="Qogir"
     ;;
   esac
   sed -i "s/^gtk-icon-theme-name = .*/gtk-icon-theme-name = \"$chooseicontheme\"/" $HOME/Dotfiles/.gtkrc-2.0

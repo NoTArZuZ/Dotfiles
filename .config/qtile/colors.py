@@ -16,7 +16,7 @@ DoomOne = [
     ["#46d9ff", "#46d9ff"]  # color15
     ]
 
-Dracula  = [
+Dracula = [
     ["#282a36b4", "#282a36b4"], # bg
     ["#f8f8f2", "#f8f8f2"], # fg
     ["#000000", "#000000"], # color01
@@ -28,7 +28,7 @@ Dracula  = [
     ["#9aedfe", "#9aedfe"]  # color15
     ]
 
-Gruvbox  = [
+Gruvbox = [
     ["#282828b4", "#282828b4"], # bg
     ["#ebdbb2", "#ebdbb2"], # fg
     ["#1d2021", "#1d2021"], # color01
@@ -40,7 +40,7 @@ Gruvbox  = [
     ["#8ec07c", "#8ec07c"], # color11
     ]
 
-CatppuccinMocha  = [
+CatppuccinMocha = [
     ["#1e1e2eb4", "#1e1e2eb4"], # bg
     ["#cdd6f4", "#cdd6f4"], # fg
     ["#11111b", "#11111b"], # color01
@@ -52,16 +52,16 @@ CatppuccinMocha  = [
     ["#89dceb", "#89dceb"], # color11
     ]
 
-RosePine  = [
-    ["#26233ab4", "#26233ab4"], # bg
-    ["#e0def4", "#e0def4"], # fg
-    ["#191724", "#191724"], # color01
-    ["#eb6f92", "#eb6f92"], # color02
-    ["#9ccfd8", "#9ccfd8"], # color03
-    ["#f6c177", "#f6c177"], # color04
-    ["#31748f", "#31748f"], # color05
-    ["#c4a7e7", "#c4a7e7"], # color06
-    ["#3e8fb0", "#3e8fb0"], # color11
+Everforest = [
+    ["#2d353bb4", "#2d353bb4"], # bg
+    ["#d3c6aa", "#d3c6aa"], # fg
+    ["#232a2e", "#232a2e"], # color01
+    ["#e67e80", "#e67e80"], # color02
+    ["#a7c080", "#a7c080"], # color03
+    ["#dbbc7f", "#dbbc7f"], # color04
+    ["#7fbbb3", "#7fbbb3"], # color05
+    ["#d699b6", "#d699b6"], # color06
+    ["#83c092", "#83c092"], # color11
     ]
 
 MonokaiPro = [
