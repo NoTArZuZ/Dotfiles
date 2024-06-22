@@ -91,6 +91,7 @@ for vt in range(1, 8):
 
 
 groups = [Group(i) for i in "12345"]
+# groups = [Group(i, label="●︎") for i in "12345"] # circles instead of numbers
 
 for i in groups:
     keys.extend(
@@ -166,6 +167,7 @@ screens = [
                 ),
                 widget.GroupBox(
                     borderwidth = 2,
+                    # highlight_method = "text", # you can use it with circles
                     highlight_method = "line",
                     highlight_color = colors[2],
                     this_current_screen_border = colors[6],
