@@ -1,17 +1,17 @@
 format = '''
-[\[$username$hostname\]](bold red)[$shell $time $directory$cmd_duration$git_branch$git_commit$git_status](bold white)
-[$character$status](bold white)'''
+[ $username at $hostname $shell$directory$cmd_duration$git_branch$git_commit$git_status$time](bold white)
+[ $character$status](bold white)'''
 
 [character]
 success_symbol = '[➜](bold green)'
 error_symbol = '[➜](bold red)'
 vimcmd_symbol = '[➜](bold cyan)'
-vimcmd_replace_symbol = '[➜](bold purple)'
-vimcmd_replace_one_symbol = '[➜](bold purple)'
-vimcmd_visual_symbol = '[➜](bold yellow)'
+vimcmd_replace_symbol = '[➜](bold yellow)'
+vimcmd_replace_one_symbol = '[➜](bold yellow)'
+vimcmd_visual_symbol = '[➜](bold purple)'
 
 [username]
-format = "[$user](bold blue)[@](bold green)"
+format = "[$user](bold blue)"
 show_always = true
 
 [directory]
