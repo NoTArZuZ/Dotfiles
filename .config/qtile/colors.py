@@ -2,7 +2,7 @@
 # Then, you can use RGBA color codes to add transparency to the colors below.
 # For ex: colors = [["#282c34ee", "#282c34dd"], ...
 
-import wal
+from wal import Wal
 
 DoomOne = [
     ["#282c34b4", "#282c34b4"], # bg

@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
 source ~/.config/qtile/vars
-source ~/.config/qtile/curtheme
 
 set -euo pipefail
+
+WALMODE=no
 
 # this thing gonna be MASSIVE
 # for now qtile, dunst, helix, xresources (gtk and qt through home-manager) is supported
@@ -17,33 +18,7 @@ pkill dunst
 }
 
 gtktheming() {
-  case $CURTHEME in
-    "Wal")
-      gtktheme="Qogir-Dark"
-      icontheme="Qogir"
-    ;;
-    "DoomOne")
-      gtktheme="Qogir-Dark"
-      icontheme="Qogir"
-    ;;
-    "Gruvbox")
-      gtktheme="gruvbox-dark"
-      icontheme="Papirus-Dark"
-    ;;
-    "Dracula")
-      gtktheme="Dracula"
-      icontheme="Dracula"
-    ;;
-    "CatppuccinMocha")
-      gtktheme="Dracula"
-      icontheme="Dracula"
-    ;;
-    "RosePine")
-      gtktheme="Dracula"
-      icontheme="Dracula"
-    ;;
-  esac
-  case $choose2 in
+  case $choose in
     "Wal")
       choosegtktheme="Qogir-Dark"
       chooseicontheme="Qogir"
@@ -69,18 +44,18 @@ gtktheming() {
       chooseicontheme="Dracula"
     ;;
   esac
-  sed -i "2s/$icontheme/$chooseicontheme/" $HOME/Dotfiles/.gtkrc-2.0
-  sed -i "3s/$gtktheme/$choosegtktheme/" $HOME/Dotfiles/.gtkrc-2.0
-  sed -i "4s/$icontheme/$chooseicontheme/" $HOME/Dotfiles/.config/gtk-3.0/settings.ini
-  sed -i "5s/$gtktheme/$choosegtktheme/" $HOME/Dotfiles/.config/gtk-3.0/settings.ini
-  sed -i "1s/$gtktheme/$choosegtktheme/" $HOME/Dotfiles/.config/xsettingsd/xsettingsd.conf
-  sed -i "2s/$icontheme/$chooseicontheme/" $HOME/Dotfiles/.config/xsettingsd/xsettingsd.conf
+  sed -i "s/^gtk-icon-theme-name = .*/gtk-icon-theme-name = \"$chooseicontheme\"/" $HOME/Dotfiles/.gtkrc-2.0
+  sed -i "s/^gtk-theme-name = .*/gtk-theme-name = \"$choosegtktheme\"/" $HOME/Dotfiles/.gtkrc-2.0
+  sed -i "s/^gtk-icon-theme-name=.*/gtk-icon-theme-name=$chooseicontheme/" $HOME/Dotfiles/.config/gtk-3.0/settings.ini
+  sed -i "s/^gtk-theme-name=.*/gtk-theme-name=$choosegtktheme/" $HOME/Dotfiles/.config/gtk-3.0/settings.ini
+  sed -i "s|^Net/IconThemeName .*|Net/IconThemeName \"$chooseicontheme\"|" $HOME/Dotfiles/.config/xsettingsd/xsettingsd.conf
+  sed -i "s|^Net/ThemeName .*|Net/ThemeName \"$choosegtktheme\"|" $HOME/Dotfiles/.config/xsettingsd/xsettingsd.conf
 }
 
 while test $# -gt 0; do
   case "$1" in
     -w)
-      if [ $CURTHEME == "Wal" ]; then
+      if [ $WALMODE == "yes" ]; then
         waltheming
         exit 0
       else
@@ -94,26 +69,25 @@ while test $# -gt 0; do
   esac
 done
 
-choose2=$(printf "$themes" | $menu "Choose:" -R -l $(printf "$themes\n" | wc -l))
-if [ $choose2 == "Wal" ]; then
-  sed -i "s/^colors = colors.*/colors = colors.$choose2/g" $HOME/Dotfiles/.config/qtile/config.py
-  sed -i "s/$CURTHEME/$choose2/" $HOME/Dotfiles/.config/helix/config.toml
-  sed -i "s/xres-$CURTHEME/xres-$choose2/" $HOME/Dotfiles/.Xresources
+choose=$(printf "$themes" | $menu "Choose:" -R -l $(printf "$themes\n" | wc -l))
+if [ $choose == "Wal" ]; then
+  sed -i "s/^colors = colors.*/colors = colors.$choose/g" $HOME/Dotfiles/.config/qtile/config.py
+  sed -i "s/^theme = .*/theme = \"$choose\"/" $HOME/Dotfiles/.config/helix/config.toml
+  sed -i "s/xres-.*/xres-$choose\"/" $HOME/Dotfiles/.Xresources
   gtktheming
-  sed -i "s/$CURTHEME/$choose2/" $HOME/Dotfiles/.config/qtile/curtheme
-  waltheming
+  sed -i "7s/^WALMODE=.*/WALMODE=yes/" $HOME/Dotfiles/.config/qtile/scripts/theme-changer
   notify-send "Theme Tool" "Changed Theme to Wallust"
+  waltheming
 else
-  sed -i "s/^colors = colors.*/colors = colors.$choose2/g" $HOME/Dotfiles/.config/qtile/config.py
-  sed -i "s/$CURTHEME/$choose2/" $HOME/Dotfiles/.config/helix/config.toml
-  sed -i "s/xres-$CURTHEME/xres-$choose2/" $HOME/Dotfiles/.Xresources
-  cp ~/Dotfiles/.config/qthemes/dunst-"$choose2" $HOME/Dotfiles/.config/dunst/dunstrc
+  sed -i "s/^colors = colors.*/colors = colors.$choose/g" $HOME/Dotfiles/.config/qtile/config.py
+  sed -i "s/^theme = .*/theme = \"$choose\"/" $HOME/Dotfiles/.config/helix/config.toml
+  sed -i "s/xres-.*/xres-$choose\"/" $HOME/Dotfiles/.Xresources
+  cp ~/Dotfiles/.config/qthemes/dunst-"$choose" $HOME/Dotfiles/.config/dunst/dunstrc
   gtktheming
-  sed -i "s/$CURTHEME/$choose2/" $HOME/Dotfiles/.config/qtile/curtheme
+  sed -i "7s/^WALMODE=.*/WALMODE=no/" $HOME/Dotfiles/.config/qtile/scripts/theme-changer
   qtile cmd-obj -o cmd -f reload_config
   xrdb -merge ~/.Xresources
+  notify-send "Theme Tool" "Changed Theme to $choose"
   kill -s USR1 $(pidof st)
   pkill dunst
-  sleep 1
-  notify-send "Theme Tool" "Changed Theme to $choose2"
 fi

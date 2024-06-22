@@ -20,6 +20,7 @@ if status is-interactive
     set fish_cursor_visual block
     # colors
     set fish_color_command green
+    set fish_color_quote cyan
     set fish_color_param magenta
     set fish_color_valid_path yellow --underline
     # commands on start
