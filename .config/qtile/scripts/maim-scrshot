@@ -5,31 +5,37 @@ source ~/.config/qtile/vars
 set -euo pipefail
 
 monitorboth() {
+  sleep 1
   maim | tee "$scrshotdir"/$(date +%s).png | $cp2cbimg
   notify-send "Screenshot Tool" "Succesfully saved and copied Monitor screenshot"
 }
 
 monitorcopy() {
+  sleep 1
   maim | $cp2cbimg
   notify-send "Screenshot Tool" "Succesfully copied Monitor screenshot"
 }
 
 monitorfile() {
+  sleep 1
   maim | tee "$scrshotdir"/$(date +%s).png
   notify-send "Screenshot Tool" "Succesfully saved Monitor screenshot"
 }
 
 windowboth() {
+  sleep 1
   maim -i $(xdotool getactivewindow) | tee "$scrshotdir"/$(date +%s).png | $cp2cbimg
   notify-send "Screenshot Tool" "Succesfully saved and copied Window screenshot"
 }
 
 windowcopy() {
+  sleep 1
   maim -i $(xdotool getactivewindow) | $cp2cbimg
   notify-send "Screenshot Tool" "Succesfully copied Window screenshot"
 }
 
 windowfile() {
+  sleep 1
   maim -i $(xdotool getactivewindow) | tee "$scrshotdir"/$(date +%s).png
   notify-send "Screenshot Tool" "Succesfully saved Window screenshot"
 }

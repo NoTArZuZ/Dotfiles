@@ -31,13 +31,13 @@ Dracula  = [
 Gruvbox  = [
     ["#282828b4", "#282828b4"], # bg
     ["#ebdbb2", "#ebdbb2"], # fg
-    ["#000000", "#000000"], # color01
+    ["#1d2021", "#1d2021"], # color01
     ["#fb4934", "#fb4934"], # color02
-    ["#98971a", "#98971a"], # color03
-    ["#d79921", "#d79921"], # color04
+    ["#b8bb26", "#b8bb26"], # color03
+    ["#fabd2f", "#fabd2f"], # color04
     ["#83a598", "#83a598"], # color05
     ["#d3869b", "#d3869b"], # color06
-    ["#b8bb26", "#b8bb26"], # color11
+    ["#8ec07c", "#8ec07c"], # color11
     ]
 
 CatppuccinMocha  = [
