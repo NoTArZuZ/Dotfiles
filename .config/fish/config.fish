@@ -10,7 +10,6 @@ if status is-interactive
     alias ls="eza --icons -a1"
     alias ll="eza --icons --git -al"
     alias tree="eza --icons -aT"
-    alias config="git -C $HOME/Dotfiles/"
     # initialization of programs
     zoxide init fish | source
     starship init fish | source
@@ -35,3 +34,4 @@ if status is-interactive
     fastfetch
     # Commands to run in interactive sessions can go here
 end
+alias config="git -C $HOME/Dotfiles/"

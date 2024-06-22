@@ -1,6 +1,7 @@
 theme = "DoomOne"
 
 [editor]
+shell = ["fish", "-c"]
 bufferline = "multiple"
 cursorline = true
 true-color = true

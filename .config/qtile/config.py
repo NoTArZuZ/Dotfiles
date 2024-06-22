@@ -54,6 +54,8 @@ keys = [
     Key([mod, "control"], "l", lazy.layout.grow_right(), desc="Grow window to the right"),
     Key([mod, "control"], "j", lazy.layout.grow_down(), desc="Grow window down"),
     Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
+    Key([mod, "control"], "equal", lazy.layout.grow(), desc="Grow window"),
+    Key([mod, "control"], "minus", lazy.layout.shrink(), desc="Shrink window"),
     Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
     # Split Sides of Stack.
     Key([mod, "shift"], "Return", lazy.layout.toggle_split(), desc="Toggle between split and unsplit sides of stack"),
