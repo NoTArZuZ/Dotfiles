@@ -20,6 +20,9 @@ display-messages = true
 left = ["mode", "spinner"]
 center = [ "read-only-indicator", "file-name", "file-modification-indicator"]
 right = ["diagnostics", "selections", "position", "file-type"]
+mode.normal = "◉︎"
+mode.insert = "◉︎"
+mode.select = "◉︎"
 
 [keys.normal]
 d = "delete_selection_noyank"

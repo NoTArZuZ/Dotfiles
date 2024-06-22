@@ -3,6 +3,9 @@ if status is-interactive
     set fish_greeting
     # abbreviations
     abbr nixswitch "sudo nixos-rebuild switch --flake ."
+    abbr hxh "hx $HOME"
+    abbr hxd "hx $HOME/Dotfiles"
+    abbr hxc "hx $HOME/.config"
     # aliases
     alias ls="eza --icons -a1"
     alias ll="eza --icons --git -al"
