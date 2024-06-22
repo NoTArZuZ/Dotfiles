@@ -7,7 +7,7 @@ set -euo pipefail
 WALMODE=no
 
 # this thing gonna be MASSIVE
-# for now qtile, dunst, helix, xresources (gtk and qt through home-manager) is supported
+# for now qtile, dunst, helix, xresources and gtk is supported
 
 waltheming() {
 wallust run ~/.cache/wallcache
