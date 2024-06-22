@@ -1,9 +1,14 @@
 if status is-interactive
+    # disable fish greeting
     set fish_greeting
+    # abbreviations
     abbr nixswitch "sudo nixos-rebuild switch --flake ."
+    # aliases
     alias ls="eza --icons -a1"
     alias ll="eza --icons --git -al"
     alias tree="eza --icons -aT"
+    alias config="git -C $HOME/Dotfiles/"
+    # initialization of programs
     zoxide init fish | source
     starship init fish | source
     # vim mode
