@@ -2,7 +2,7 @@
 NoTArZuZ's dotfiles for NixOS 24.05 Heavily inspired by DistroTube.
 
 <div align="center"><tr>Doom One</tr>
-<img src="https://cdn.discordapp.com/attachments/836500386390605846/1253417537413316648/1718908410.png?ex=6675c78c&is=6674760c&hm=844eda30ed18b7152099770d8ca6da9cb16b310ec9c3b5c099ad65d3dd3d2864&"/></div>
+<img src="https://cdn.discordapp.com/attachments/693827752532377641/1254125256986066974/1719077065.png?ex=66785aa9&is=66770929&hm=e26866ff54ba3db3bb5f012700552b35bec4c54f121cc78c1e789308d484e646&"/></div>
 
 <div align="center"><table><tr><td>Gruvbox</td><td>Catppuccin Mocha</td></tr><tr><td>
 <img src="https://cdn.discordapp.com/attachments/693827752532377641/1254125255220265001/1719076898.png?ex=66785aa9&is=66770929&hm=b4806c915d1c2721d196b658a3a1e76572c09a9feaf0444a48b74effa9362184&"/></td><td>
