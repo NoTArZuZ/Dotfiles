@@ -84,31 +84,31 @@ stow .
 
 ## Installed packages:
 
-| Package                 | Description                                   |
-| ----------------------- | --------------------------------------------- |
-| stow                    | Dotfiles manager (You can easily update them) |
-| qtile (on X11)          | The best tiling WM ever IMO                   |
-| firefox                 | Based web browser                             |
-| fish                    | A shell without massive configs               |
-| helix                   | Best editor IMO                               |
-| fastfetch               | Better than neofetch                          |
-| vesktop                 | Discord with plugins                          |
-| pavucontrol             | GUI volume control                            |
-| picom                   | For vsync and transparency                    |
-| ranger                  | TUI file manager                              |
-| nsxiv                   | Best image viewer IMO                         |
-| feh                     | To set wallpapers                             |
-| obs-studio              | To record videos                              |
-| vlc                     | Media player                                  |
-| dunst                   | Notification daemon                           |
-| zoxide                  | Better than cd                                |
-| davinci-resolve         | The only video editor on linux                |
-| starship                | Fancy shell prompt                            |
-| eza                     | Fancy ls, ll and tree replacement             |
-| mpd and ncmpcpp         | Music                                         |
-| dmenu (My fork)         | Suckless menus                                |
-| st (My fork)            | Suckless terminal emulator                    |
-| and more!               | See ~/.config/qtile/vars or configuration.nix |
+| Package                                        | Description                                   |
+| ---------------------------------------------- | --------------------------------------------- |
+| stow                                           | Dotfiles manager (You can easily update them) |
+| qtile (on X11)                                 | The best tiling WM ever IMO                   |
+| firefox                                        | Based web browser                             |
+| fish                                           | A shell without massive configs               |
+| helix                                          | Best editor IMO                               |
+| fastfetch                                      | Better than neofetch                          |
+| vesktop                                        | Discord with plugins                          |
+| pavucontrol                                    | GUI volume control                            |
+| picom                                          | For vsync and transparency                    |
+| ranger                                         | TUI file manager                              |
+| nsxiv                                          | Best image viewer IMO                         |
+| feh                                            | To set wallpapers                             |
+| obs-studio                                     | To record videos                              |
+| vlc                                            | Media player                                  |
+| dunst                                          | Notification daemon                           |
+| zoxide                                         | Better than cd                                |
+| davinci-resolve                                | The only video editor on linux                |
+| starship                                       | Fancy shell prompt                            |
+| eza                                            | Fancy ls, ll and tree replacement             |
+| mpd and ncmpcpp                                | Music                                         |
+| [dmenu](https://github.com/NoTArZuZ/dmenu-sus) | Suckless menus                                |
+| [st](https://github.com/NoTArZuZ/st-sus)       | Suckless terminal emulator                    |
+| and more!                                      | See ~/.config/qtile/vars or configuration.nix |
 
 ## TODO:
 * Add more themes?
