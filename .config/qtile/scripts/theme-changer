@@ -76,8 +76,8 @@ if [ $choose == "Wal" ]; then
   sed -i "s/xres-.*/xres-$choose\"/" $HOME/Dotfiles/.Xresources
   gtktheming
   sed -i "7s/^WALMODE=.*/WALMODE=yes/" $HOME/Dotfiles/.config/qtile/scripts/theme-changer
-  notify-send "Theme Tool" "Changed Theme to Wallust"
   waltheming
+  notify-send "Theme Tool" "Changed Theme to Wallust"
 else
   sed -i "s/^colors = colors.*/colors = colors.$choose/g" $HOME/Dotfiles/.config/qtile/config.py
   sed -i "s/^theme = .*/theme = \"$choose\"/" $HOME/Dotfiles/.config/helix/config.toml
@@ -87,7 +87,7 @@ else
   sed -i "7s/^WALMODE=.*/WALMODE=no/" $HOME/Dotfiles/.config/qtile/scripts/theme-changer
   qtile cmd-obj -o cmd -f reload_config
   xrdb -merge ~/.Xresources
-  notify-send "Theme Tool" "Changed Theme to $choose"
   kill -s USR1 $(pidof st)
   pkill dunst
+  notify-send "Theme Tool" "Changed Theme to $choose"
 fi
