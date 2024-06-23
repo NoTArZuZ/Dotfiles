@@ -82,6 +82,14 @@ stow .
 | theme-changer  | Theme changer (DoomOne, CatppuccinMocha, Dracula, Gruvbox, RosePine, Wal) |
 | yt-download    | Download videos or audio using yt-dlp                                     |
 
+Some scripts will require these directories:
+
+* ~/Pictures/Wallpapers
+* ~/Pictures/Screenshots
+* ~/Notes
+* ~/Music
+* ~/Videos
+
 ## Installed packages:
 
 | Package                                        | Description                                   |
