@@ -12,28 +12,28 @@ NoTArZuZ's dotfiles for NixOS 24.05 Heavily inspired by DistroTube.
 <img src="https://cdn.discordapp.com/attachments/836500386390605846/1254176168782073947/1719089096.png?ex=66788a14&is=66773894&hm=5efd6fa5e3552419b08f189b6de150cf67af8fcb710f2fa007cbbe2819f672d3&"/></td></tr>
 </table></div>
 
-> [!IMPORTANT]
+> [!WARNING]
 > Configuration made for AMD CPU, AMD GPU and wired internet connection.
 > Change configuration.nix/hardware-configuration.nix before rebuilding to match your hardware.
 
 ## Installation:
 
+> [!IMPORTANT]
+> Before rebuilding.
+> Be sure that your hostname is **nixos** and username is **sus** (if you don't have a user create one and set password).
+> Or change username/hostname everywhere (this will make dotfiles almost non updatable).
+
 ```
 git clone https://github.com/NoTArZuZ/Dotfiles ~/Dotfiles
+cd ~/Dotfiles
+stow --adopt .
 cd ~/Dotfiles/nix-cfg
 sudo nixos-rebuild switch --flake .
 ```
 
-After rebuilding NixOS:
-
-```
-cd ~/Dotfiles
-stow --adopt .
-```
-
 And then reboot!
 
-## Updating
+## Updating:
 
 ```
 cd ~/Dotfiles/nix-cfg
