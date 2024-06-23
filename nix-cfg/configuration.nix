@@ -235,6 +235,10 @@
   # Set default text editor.
   environment.variables.EDITOR = "hx";
 
+  # Set cursor theme
+  environment.variables.XCURSOR_THEME = "phinger-cursors-light";
+  environment.variables.XCURSOR_SIZE = "24";
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
