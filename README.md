@@ -95,7 +95,7 @@ stow .
 | vesktop                                        | Discord with plugins                          |
 | pavucontrol                                    | GUI volume control                            |
 | picom                                          | For vsync and transparency                    |
-| ranger                                         | TUI file manager                              |
+| yazi                                           | TUI file manager                              |
 | nsxiv                                          | Best image viewer IMO                         |
 | feh                                            | To set wallpapers                             |
 | obs-studio                                     | To record videos                              |

@@ -1,0 +1,15 @@
+[manager]
+linemode = "size"
+sort_by = "alphabetical"
+sort_dir_first = true
+show_hidden = true
+[opener]
+edit = [
+	{ run = 'hx "$@"', block = true },
+]
+play = [
+	{ run = 'mpc add "$@"', orphan = true },
+]
+open = [
+	{ run = 'xdg-open "$@"', desc = "Open" },
+]

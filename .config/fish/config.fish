@@ -1,6 +1,12 @@
 if status is-interactive
     # disable fish greeting
     set fish_greeting
+    # functions
+    function lf
+        set TERM foot
+        yazi
+        set TERM st-256color
+    end
     # abbreviations
     abbr nixswitch "sudo nixos-rebuild switch --flake ."
     abbr hxh "hx $HOME"

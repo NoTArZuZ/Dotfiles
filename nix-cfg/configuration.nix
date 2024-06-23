@@ -96,7 +96,7 @@
   services.xserver.displayManager.lightdm.greeters.gtk.enable = false;
   services.xserver.displayManager.lightdm.greeters.slick.enable = true;
   services.xserver.displayManager.lightdm.greeters.slick.theme.name = "Qogir-Dark";
-  services.xserver.displayManager.lightdm.greeters.slick.theme.package = pkgs.qogir-theme;
+  services.xserver.displayManager.lightdm.greeters.slick.iconTheme.name = "Qogir";
 
   # Enable qtile
   services.xserver.windowManager.qtile.enable = true;
@@ -166,7 +166,7 @@
   pavucontrol
   picom
   bibata-cursors
-  ranger
+  yazi
   htop
   nsxiv
   feh
