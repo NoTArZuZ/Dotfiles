@@ -165,7 +165,7 @@
   vesktop
   pavucontrol
   picom
-  bibata-cursors
+  phinger-cursors
   yazi
   htop
   nsxiv

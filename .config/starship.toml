@@ -22,7 +22,7 @@ ssh_only = false
 format = '[$hostname](bold purple)'
 
 [time]
-format = "[$time](bold yellow)"
+format = "[$time](bold dark grey)"
 disabled = false
 
 [cmd_duration]

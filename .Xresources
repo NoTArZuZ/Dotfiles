@@ -4,7 +4,7 @@ Xft.autohint:	0
 Xft.hintstyle:	hintslight
 Xft.rgba:	rgb
 Xft.lcdfilter:	lcddefault
-Xcursor.theme: Bibata-Modern-Ice
+Xcursor.theme: phinger-cursors-light
 Xcursor.size: 24
 
 st.borderpx: 2
