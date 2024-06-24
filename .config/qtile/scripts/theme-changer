@@ -10,11 +10,12 @@ WALMODE=no
 # for now qtile, dunst, helix, xresources and gtk is supported
 
 waltheming() {
-wallust run ~/.cache/wallcache
-qtile cmd-obj -o cmd -f reload_config
-xrdb -merge ~/.Xresources
-kill -s USR1 $(pidof st) || echo "no st running"
-pkill dunst || echo "no dunst running"
+  wallust run ~/.cache/wallcache
+  qtile cmd-obj -o cmd -f reload_config
+  xrdb -merge ~/.Xresources
+  kill -s USR1 $(pidof st) || echo "no st running"
+  pkill dunst || echo "no dunst running"
+  kill -s USR1 $(pidof hx) || echo "no helix running"
 }
 
 gtktheming() {
@@ -81,6 +82,7 @@ if [ $choose == "Wal" ]; then
 elif [ $choose == "Helix" ]; then
   helixchoose=$(printf "DoomOne\nCatppuccinMocha\nGruvbox\nEverforest\nDracula\nWal\ngruber-darker\nmonokai_pro\nnord-night\ntokyonight\nayu_mirage\ndarcula-solid" | $menu "Choose helix theme:" -R -l 12)
   sed -i "s/^theme = .*/theme = \"$helixchoose\"/" $HOME/Dotfiles/.config/helix/config.toml
+  kill -s USR1 $(pidof hx) || echo "no helix running"
   notify-send "Theme Tool" "Changed Helix Theme to $helixchoose"
 else
   sed -i "s/^colors = colors.*/colors = colors.$choose/g" $HOME/Dotfiles/.config/qtile/config.py
@@ -93,5 +95,6 @@ else
   xrdb -merge ~/.Xresources
   kill -s USR1 $(pidof st) || echo "no st running"
   pkill dunst || echo "no dunst running"
+  kill -s USR1 $(pidof hx) || echo "no helix running"
   notify-send "Theme Tool" "Changed Theme to $choose"
 fi
