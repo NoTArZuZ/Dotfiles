@@ -224,7 +224,7 @@
   # Install fonts.
   fonts.packages = with pkgs; [
     ubuntu_font_family
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    (nerdfonts.override { fonts = [ "JetBrainsMono" "IosevkaTerm" "Mononoki" ]; })
   ];
 
   # Install OpenGL extra packages.

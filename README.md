@@ -57,7 +57,7 @@ stow .
 | Super + hjkl         | Move focus left down up right          |
 | Super + Shift + hjkl | Move focused window left down up right |
 | Super + t            | Toggle window floating                 |
-| Super + e            | Launch st with ranger                  |
+| Super + e            | Launch st with yazi                    |
 | Super + b            | Launch firefox                         |
 | Super + r            | Launch dmenu_run                       |
 | Super + g            | Launch dmenu script hub                |
