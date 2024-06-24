@@ -25,10 +25,10 @@ NoTArZuZ's dotfiles for NixOS 24.05 Heavily inspired by DistroTube.
 
 ```
 git clone https://github.com/NoTArZuZ/Dotfiles ~/Dotfiles
-cd ~/Dotfiles
-stow --adopt .
 cd ~/Dotfiles/nix-cfg
 sudo nixos-rebuild switch --flake .
+cd ~/Dotfiles
+stow --adopt .
 ```
 
 And then reboot!
