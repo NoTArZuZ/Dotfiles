@@ -13,8 +13,8 @@ waltheming() {
 wallust run ~/.cache/wallcache
 qtile cmd-obj -o cmd -f reload_config
 xrdb -merge ~/.Xresources
-kill -s USR1 $(pidof st)
-pkill dunst
+kill -s USR1 $(pidof st) || echo "no st running"
+pkill dunst || echo "no dunst running"
 }
 
 gtktheming() {
@@ -87,7 +87,7 @@ else
   sed -i "7s/^WALMODE=.*/WALMODE=no/" $HOME/Dotfiles/.config/qtile/scripts/theme-changer
   qtile cmd-obj -o cmd -f reload_config
   xrdb -merge ~/.Xresources
-  kill -s USR1 $(pidof st)
-  pkill dunst
+  kill -s USR1 $(pidof st) || echo "no st running"
+  pkill dunst || echo "no dunst running"
   notify-send "Theme Tool" "Changed Theme to $choose"
 fi
