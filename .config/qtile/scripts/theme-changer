@@ -88,7 +88,7 @@ else
   sed -i "s/^colors = colors.*/colors = colors.$choose/g" $HOME/Dotfiles/.config/qtile/config.py
   sed -i "s/^theme = .*/theme = \"$choose\"/" $HOME/Dotfiles/.config/helix/config.toml
   sed -i "s/xres-.*/xres-$choose\"/" $HOME/Dotfiles/.Xresources
-  cp ~/Dotfiles/.config/qthemes/dunst-"$choose" $HOME/Dotfiles/.config/dunst/dunstrc
+  cp ~/Dotfiles/.config/qtile/themes/dunst-"$choose" $HOME/Dotfiles/.config/dunst/dunstrc
   gtktheming
   sed -i "7s/^WALMODE=.*/WALMODE=no/" $HOME/Dotfiles/.config/qtile/scripts/theme-changer
   qtile cmd-obj -o cmd -f reload_config

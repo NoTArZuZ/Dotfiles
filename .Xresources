@@ -17,4 +17,4 @@ st.font: JetBrainsMono Nerd Font:medium:pixelsize=16:antialias=true:autohint=tru
 
 dmenu.font: Ubuntu:pixelsize=14
 
-#include ".config/qthemes/xres-DoomOne"
+#include ".config/qtile/themes/xres-DoomOne"

@@ -12,4 +12,4 @@ dunst.template = 'templates/colors-dunstrc'
 dunst.target = '~/Dotfiles/.config/dunst/dunstrc'
 
 xresources.template = 'templates/colors-xresources'
-xresources.target = '~/Dotfiles/.config/qthemes/xres-Wal'
+xresources.target = '~/Dotfiles/.config/qtile/themes/xres-Wal'
