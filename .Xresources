@@ -7,12 +7,14 @@ Xft.lcdfilter:	lcddefault
 Xcursor.theme: phinger-cursors-light
 Xcursor.size: 24
 
-st.borderpx: 2
+st.borderpx: 0
 
 st.alpha: 1.0
+
 st.font: JetBrainsMono Nerd Font:medium:pixelsize=16:antialias=true:autohint=true
 ! st.font: IosevkaTerm Nerd Font Mono:medium:pixelsize=18:antialias=true:autohint=true
 ! st.font: Mononoki Nerd Font Mono:medium:pixelsize=18:antialias=true:autohint=true
+
 dmenu.font: Ubuntu:pixelsize=14
 
 #include ".config/qthemes/xres-DoomOne"

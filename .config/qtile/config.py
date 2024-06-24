@@ -71,7 +71,7 @@ keys = [
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     # Spawn Programs
     Key([mod], "Return", lazy.spawn("st"), desc="Launch terminal"),
-    Key([mod], "e", lazy.spawn("st fish -c lf"), desc="Launch yazi"),
+    Key([mod], "e", lazy.spawn("st fish -c yazi"), desc="Launch yazi"),
     Key([mod], "b", lazy.spawn("firefox"), desc="Launch firefox"),
     Key([mod], "r", lazy.spawn("dmenu_run -bw 2 -c -l 10"), desc="Spawn a program using dmenu"),
     Key([mod], "g", lazy.spawn(home + "/.config/qtile/hub"), desc="Script Hub"),

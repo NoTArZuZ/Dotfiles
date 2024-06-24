@@ -69,7 +69,7 @@ while test $# -gt 0; do
   esac
 done
 
-choose=$(printf "$themes" | $menu "Choose:" -R -l $(printf "$themes\n" | wc -l))
+choose=$(printf "$themes\nHelix" | $menu "Choose:" -R -l $(printf "$themes\nHelix\n" | wc -l))
 if [ $choose == "Wal" ]; then
   sed -i "s/^colors = colors.*/colors = colors.$choose/g" $HOME/Dotfiles/.config/qtile/config.py
   sed -i "s/^theme = .*/theme = \"$choose\"/" $HOME/Dotfiles/.config/helix/config.toml
@@ -78,6 +78,10 @@ if [ $choose == "Wal" ]; then
   sed -i "7s/^WALMODE=.*/WALMODE=yes/" $HOME/Dotfiles/.config/qtile/scripts/theme-changer
   waltheming
   notify-send "Theme Tool" "Changed Theme to Wallust"
+elif [ $choose == "Helix" ]; then
+  helixchoose=$(printf "DoomOne\nCatppuccinMocha\nGruvbox\nEverforest\nDracula\nWal\ngruber-darker\nmonokai_pro\nnord-night\ntokyonight\nayu_mirage\ndarcula-solid" | $menu "Choose helix theme:" -R -l 12)
+  sed -i "s/^theme = .*/theme = \"$helixchoose\"/" $HOME/Dotfiles/.config/helix/config.toml
+  notify-send "Theme Tool" "Changed Helix Theme to $helixchoose"
 else
   sed -i "s/^colors = colors.*/colors = colors.$choose/g" $HOME/Dotfiles/.config/qtile/config.py
   sed -i "s/^theme = .*/theme = \"$choose\"/" $HOME/Dotfiles/.config/helix/config.toml

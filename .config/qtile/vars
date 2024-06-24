@@ -6,7 +6,7 @@
 # feel free to change anything to your liking
 
 # one line programs
-term="st -e"
+term="st"
 menu="dmenu -bw 2 -c -p" # prompt at the end
 imgsetbg="feh --bg-scale"
 imgview="nsxiv -r -t -a -o" # recursive and output to stdout

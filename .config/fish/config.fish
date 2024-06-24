@@ -35,9 +35,18 @@ if status is-interactive
     fastfetch
     # Commands to run in interactive sessions can go here
 end
-alias config="git -C $HOME/Dotfiles/"
-function lf
+# non-interactive
+
+# functions
+function yazi
     set TERM foot
-    yazi
+    command yazi $argv
     set TERM st-256color
 end
+function hx
+    xdotool getactivewindow set_window --classname stedit set_window --class stedit
+    command hx $argv
+    xdotool getactivewindow set_window --classname st set_window --class St
+end
+# aliases
+alias config="git -C $HOME/Dotfiles/"
