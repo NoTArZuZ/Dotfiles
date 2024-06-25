@@ -11,7 +11,7 @@ desktopopen=$(grep --include=\*.desktop -Rlnw "$choose" /run/current-system/sw/s
 isterminalapp=$(awk '/^Terminal=/ {print $0;exit}' $desktopopen | cut -b 10-)
 if [ $isterminalapp == "true" ]; then
   termappopen=$(awk '/^Exec=/ {print $0;exit}' $desktopopen | cut -b 6-)
-  $term $termappopen
+  $term fish -c $termappopen
 else
   gio launch $desktopopen 
 fi
