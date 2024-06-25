@@ -38,12 +38,14 @@ Comment:
 130
 ```
 
-### Edit windows margins and borders:
+### No single window margin and border:
 
 ```
-Edit:
-125
-126
+Uncomment:
+131
+132
+Comment:
+130
 ```
 
 ## ~/.Xresources

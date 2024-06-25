@@ -127,8 +127,9 @@ layout_defaults = {
     "margin": 8,
     "border_focus": colors[6],
     "border_normal": colors[0],
-    "single_margin": 0,
-    "single_border_width": 0,
+    "single_margin": 20,
+    # "single_margin": 0,
+    # "single_border_width": 0,
 }
 
 layouts = [
