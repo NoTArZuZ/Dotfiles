@@ -30,6 +30,22 @@ Uncomment:
 262
 ```
 
+### Enable single window margins and borders:
+
+```
+Comment:
+129
+130
+```
+
+### Edit windows margins and borders:
+
+```
+Edit:
+125
+126
+```
+
 ## ~/.Xresources
 
 * To change st font uncomment one of the 14-16 lines.
