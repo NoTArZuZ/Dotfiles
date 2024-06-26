@@ -113,6 +113,7 @@ polkit-gnome
 eza
 curl
 qtile
+qtile-extras
 firefox
 fish
 pipewire
