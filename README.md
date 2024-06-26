@@ -25,7 +25,7 @@ NoTArZuZ's dotfiles for NixOS 24.05 Heavily inspired by DistroTube.
 > Or change username/hostname everywhere.
 
 ```
-git clone https://github.com/NoTArZuZ/Dotfiles ~/Dotfiles
+git clone --single-branch --branch main https://github.com/NoTArZuZ/Dotfiles ~/Dotfiles
 cd ~/Dotfiles/nix-cfg
 sudo nixos-rebuild switch --flake .
 cd ~/Dotfiles
@@ -121,5 +121,4 @@ Some scripts will only work on nixos and require these directories:
 | and more!                                      | See ~/.config/qtile/vars or configuration.nix |
 
 ## TODO:
-* Make new repo of this dotfiles for more usual distros
 * Add more themes?
