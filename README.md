@@ -20,7 +20,8 @@ git clone --single-branch --branch other https://github.com/NoTArZuZ/Dotfiles ~/
 cd ~/Dotfiles
 stow --adopt .
 install dependencies
-enable lightdm (not start)
+set environment variables (EDITOR=hx)
+enable pipewire lightdm (not start)
 ```
 
 And then reboot!
