@@ -16,10 +16,11 @@ NoTArZuZ's dotfiles for more usual distros. Heavily inspired by DistroTube.
 ## Installation:
 
 ```
-git clone https://github.com/NoTArZuZ/Dotfiles ~/Dotfiles
-install dependencies
+git clone --single-branch --branch other https://github.com/NoTArZuZ/Dotfiles ~/Dotfiles
 cd ~/Dotfiles
 stow --adopt .
+install dependencies
+enable lightdm (not start)
 ```
 
 And then reboot!
@@ -29,7 +30,6 @@ And then reboot!
 ```
 cd ~/Dotfiles/
 git pull
-cd ~/Dotfiles
 stow --adopt .
 ```
 
@@ -112,6 +112,15 @@ stow
 polkit-gnome
 eza
 curl
+qtile
+firefox
+fish
+pipewire
+pipewire-pulse
+pipewire-alsa
+lightdm
+mpd
+xorg
 phinger-cursors
 gruvbox-dark-gtk
 dracula-theme
@@ -119,6 +128,10 @@ qogir-theme
 papirus-icon-theme
 qogir-icon-theme
 dracula-icon-theme
-[dmenu](https://github.com/NoTArZuZ/dmenu-sus)
-[st](https://github.com/NoTArZuZ/st-sus)
+ttf-jetbrains-mono-nerd
+ttf-iosevkaterm-nerd
+ttf-mononoki-nerd
+ubuntu-font-family
+https://github.com/NoTArZuZ/dmenu-sus
+https://github.com/NoTArZuZ/st-sus
 ```
