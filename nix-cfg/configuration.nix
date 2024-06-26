@@ -92,6 +92,7 @@
   services.libinput.mouse.accelProfile = "flat";
 
   # Enable the lightdm service.
+  services.displayManager.defaultSession = "none+qtile";
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.displayManager.lightdm.greeters.gtk.enable = false;
   services.xserver.displayManager.lightdm.greeters.slick.enable = true;
