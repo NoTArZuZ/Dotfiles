@@ -4,56 +4,8 @@ source ~/.config/qtile/vars
 
 set -euo pipefail
 
-delgens() {
-  choose3=$(printf "Old\nOlder than" | $menu "Delete generations:" -l 2 -R)
-  case $choose3 in
-    Old)
-      $term sudo nix-collect-garbage -d
-    ;;
-    Older\ than)
-      olderthan=$(echo "" | $menu "Older than:")
-      $term sudo nix-collect-garbage --delete-older-than $olderthan
-    ;;
-    *)
-      exit 1
-    ;;
-  esac
-}
-
-nixosrebuildstuff() {
-  rebuildopt=$(printf "switch\nboot\ntest" | $menu "Rebuild" -l 3 -R)
-  flakeorno=$(pritnf "Rebuild\nRebuild flake" | $menu "Choose:" -l 2 -R)
-  if [ $flakeorno == "Rebuild flake" ]; then
-    flaketoreb=$(echo "" | $menu "flake dir:")
-    $term sudo nixos-rebuild $rebuildopt --flake $flaketoreb
-  else
-    $term sudo nixos-rebuild $rebuildopt
-  fi
-}
-
-nixosstuff() {
-  choose2=$(printf "Rebuild\nCollect garbage\nDelete generations" | $menu "Choose:" -l 3 -R)
-  case $choose2 in
-    Rebuild)
-      nixosrebuildstuff
-    ;;
-    Collect\ garbage)
-      $term sudo nix-collect-garbage
-    ;;
-    Delete\ generations)
-      delgens
-    ;;
-    *)
-      exit 1
-    ;;
-  esac
-}
-
-choose=$(printf "nixos\nman\nexec\nhtop\nradeontop" | $menu "Choose:" -l 5 -R)
+choose=$(printf "man\nexec\nhtop\nradeontop" | $menu "Choose:" -l 5 -R)
 case $choose in
-  nixos)
-    nixosstuff
-  ;;
   man)
     cmdtoman=$(echo "" | $menu "Enter cmd to manual:")
     $term man $cmdtoman

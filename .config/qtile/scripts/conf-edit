@@ -4,26 +4,7 @@ source ~/.config/qtile/vars
 
 set -euo pipefail
 
-dotfilesedit() {
-  bigfindlines1=$(find $dotdir -maxdepth 1 -printf '%f\n' | tail -n +2 | wc -l)
-  avconfs=$(find $dotdir -maxdepth 1 -printf '%f\n' | tail -n +2)
-  conftoed=$(printf "$avconfs" | $menu "Config to edit:" -R -l $bigfindlines1)
-  $term -c stedit $EDITOR $dotdir$conftoed
-}
-
-nixcfgedit() {
-  bigfindlines1=$(find $nixcfgdir -maxdepth 1 -printf '%f\n' | tail -n +2 | wc -l)
-  avconfs=$(find $nixcfgdir -maxdepth 1 -printf '%f\n' | tail -n +2)
-  conftoed=$(printf "$avconfs" | $menu "Config to edit:" -R -l $bigfindlines1)
-  $term -c stedit $EDITOR $nixcfgdir$conftoed
-}
-
-choose=$(printf "Dotfiles\nNixOS" | $menu "Choose:" -R -l 2)
-case $choose in
-  NixOS)
-    nixcfgedit
-  ;;
-  Dotfiles)
-    dotfilesedit
-  ;;
-esac
+bigfindlines1=$(find $dotdir -maxdepth 1 -printf '%f\n' | tail -n +2 | wc -l)
+avconfs=$(find $dotdir -maxdepth 1 -printf '%f\n' | tail -n +2)
+conftoed=$(printf "$avconfs" | $menu "Config to edit:" -R -l $bigfindlines1)
+$term -c stedit $EDITOR $dotdir$conftoed

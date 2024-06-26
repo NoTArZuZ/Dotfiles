@@ -3,7 +3,6 @@ if status is-interactive
     set fish_greeting
     # functions
     # abbreviations
-    abbr nixswitch "sudo nixos-rebuild switch --flake ."
     abbr hxh "hx $HOME"
     abbr hxd "hx $HOME/Dotfiles"
     abbr hxc "hx $HOME/.config"

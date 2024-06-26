@@ -1,6 +1,6 @@
-# Dotfiles
+# Dotfiles WIP!
 
-NoTArZuZ's dotfiles for NixOS 24.05 Heavily inspired by DistroTube.
+NoTArZuZ's dotfiles for more usual distros. Heavily inspired by DistroTube.
 
 <div align="center"><tr>Doom One</tr>
 <img src="https://cdn.discordapp.com/attachments/693827752532377641/1254125256986066974/1719077065.png?ex=66785aa9&is=66770929&hm=e26866ff54ba3db3bb5f012700552b35bec4c54f121cc78c1e789308d484e646&"/></div>
@@ -13,21 +13,11 @@ NoTArZuZ's dotfiles for NixOS 24.05 Heavily inspired by DistroTube.
 <img src="https://cdn.discordapp.com/attachments/836500386390605846/1254176168782073947/1719089096.png?ex=66788a14&is=66773894&hm=5efd6fa5e3552419b08f189b6de150cf67af8fcb710f2fa007cbbe2819f672d3&"/></td></tr>
 </table></div>
 
-> [!WARNING]
-> Configuration made for AMD CPU, AMD GPU and wired internet connection.
-> Change configuration.nix/hardware-configuration.nix before rebuilding to match your hardware.
-
 ## Installation:
-
-> [!IMPORTANT]
-> Before rebuilding.
-> Be sure your hostname is **nixos** and username is **sus** (if you don't have a user create one and set password).
-> Or change username/hostname everywhere.
 
 ```
 git clone https://github.com/NoTArZuZ/Dotfiles ~/Dotfiles
-cd ~/Dotfiles/nix-cfg
-sudo nixos-rebuild switch --flake .
+install dependencies
 cd ~/Dotfiles
 stow --adopt .
 ```
@@ -37,9 +27,8 @@ And then reboot!
 ## Updating:
 
 ```
-cd ~/Dotfiles/nix-cfg
+cd ~/Dotfiles/
 git pull
-sudo nixos-rebuild switch --flake .
 cd ~/Dotfiles
 stow --adopt .
 ```
@@ -84,7 +73,7 @@ stow --adopt .
 | theme-changer  | Theme changer (DoomOne, CatppuccinMocha, Dracula, Gruvbox, RosePine, Wal) |
 | yt-download    | Download videos or audio using yt-dlp                                     |
 
-Some scripts will only work on nixos and require these directories:
+Some scripts require these directories:
 
 * ~/Pictures/Wallpapers
 * ~/Pictures/Screenshots
@@ -92,34 +81,44 @@ Some scripts will only work on nixos and require these directories:
 * ~/Music
 * ~/Videos
 
-## Installed packages:
+## Packages to install:
 
-| Package                                        | Description                                   |
-| ---------------------------------------------- | --------------------------------------------- |
-| stow                                           | Dotfiles manager (You can easily update them) |
-| qtile (on X11)                                 | The best tiling WM ever IMO                   |
-| firefox                                        | Based web browser                             |
-| fish                                           | A shell without massive configs               |
-| helix                                          | Best editor IMO                               |
-| fastfetch                                      | Better than neofetch                          |
-| vesktop                                        | Discord with plugins                          |
-| pavucontrol                                    | GUI volume control                            |
-| picom                                          | For vsync and transparency                    |
-| yazi                                           | TUI file manager                              |
-| nsxiv                                          | Best image viewer IMO                         |
-| feh                                            | To set wallpapers                             |
-| obs-studio                                     | To record videos                              |
-| vlc                                            | Media player                                  |
-| dunst                                          | Notification daemon                           |
-| zoxide                                         | Better than cd                                |
-| davinci-resolve                                | The only video editor on linux                |
-| starship                                       | Fancy shell prompt                            |
-| eza                                            | Fancy ls, ll and tree replacement             |
-| mpd and ncmpcpp                                | Music                                         |
-| [dmenu](https://github.com/NoTArZuZ/dmenu-sus) | Suckless menus                                |
-| [st](https://github.com/NoTArZuZ/st-sus)       | Suckless terminal emulator                    |
-| and more!                                      | See ~/.config/qtile/vars or configuration.nix |
-
-## TODO:
-* Make new repo of this dotfiles for more usual distros
-* Add more themes?
+```
+git
+helix
+fastfetch
+discord
+pavucontrol
+picom
+yazi
+htop
+nsxiv
+feh
+dunst
+wallust
+libnotify
+radeontop
+xclip
+xdotool
+maim
+zoxide
+translate-shell
+colorpicker
+starship
+mpc
+ncmpcpp
+yt-dlp
+stow
+polkit-gnome
+eza
+curl
+phinger-cursors
+gruvbox-dark-gtk
+dracula-theme
+qogir-theme
+papirus-icon-theme
+qogir-icon-theme
+dracula-icon-theme
+[dmenu](https://github.com/NoTArZuZ/dmenu-sus)
+[st](https://github.com/NoTArZuZ/st-sus)
+```

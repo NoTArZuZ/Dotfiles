@@ -4,10 +4,10 @@ source ~/.config/qtile/vars
 
 set -euo pipefail
 
-desktopfiles=$(find /run/current-system/sw/share/applications -name "*.desktop")
+desktopfiles=$(find /usr/share/applications -name "*.desktop")
 appnames=$(awk '/^Name=/ {print $0;nextfile}' $desktopfiles | cut -b 6-)
 choose=$(printf "$appnames" | $menu "Run:" -R -l 10)
-desktopopen=$(grep --include=\*.desktop -Rlnw "$choose" /run/current-system/sw/share/applications/)
+desktopopen=$(grep --include=\*.desktop -Rlnw "$choose" /usr/share/applications)
 isterminalapp=$(awk '/^Terminal=/ {print $0;exit}' $desktopopen | cut -b 10-)
 if [ $isterminalapp == "true" ]; then
   termappopen=$(awk '/^Exec=/ {print $0;exit}' $desktopopen | cut -b 6-)
