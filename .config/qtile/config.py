@@ -60,7 +60,7 @@ keys = [
     # Split Sides of Stack.
     Key([mod, "shift"], "Return", lazy.layout.toggle_split(), desc="Toggle between split and unsplit sides of stack"),
     # Cycle Layouts.
-    Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
+    Key([mod], "Tab", lazy.next_layout(), desc="Cycle between layouts"),
     # Kill Focused Window.
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
     # Float and Fullscreen Focused Window.

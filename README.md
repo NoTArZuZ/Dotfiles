@@ -1,4 +1,5 @@
 # Dotfiles
+
 NoTArZuZ's dotfiles for NixOS 24.05 Heavily inspired by DistroTube.
 
 <div align="center"><tr>Doom One</tr>
@@ -20,8 +21,8 @@ NoTArZuZ's dotfiles for NixOS 24.05 Heavily inspired by DistroTube.
 
 > [!IMPORTANT]
 > Before rebuilding.
-> Be sure that your hostname is **nixos** and username is **sus** (if you don't have a user create one and set password).
-> Or change username/hostname everywhere (this will make dotfiles almost non updatable).
+> Be sure your hostname is **nixos** and username is **sus** (if you don't have a user create one and set password).
+> Or change username/hostname everywhere.
 
 ```
 git clone https://github.com/NoTArZuZ/Dotfiles ~/Dotfiles
@@ -40,7 +41,7 @@ cd ~/Dotfiles/nix-cfg
 git pull
 sudo nixos-rebuild switch --flake .
 cd ~/Dotfiles
-stow .
+stow --adopt .
 ```
 
 ## Keybinds:
@@ -120,4 +121,5 @@ Some scripts will only work on nixos and require these directories:
 | and more!                                      | See ~/.config/qtile/vars or configuration.nix |
 
 ## TODO:
+* Make new repo of this dotfiles for more usual distros
 * Add more themes?
