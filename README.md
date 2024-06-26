@@ -60,6 +60,7 @@ stow .
 | Super + e            | Launch st with yazi                    |
 | Super + b            | Launch firefox                         |
 | Super + r            | Launch dmenu_run                       |
+| Super + Ctrl + Enter | Run .desktop app                       |
 | Super + g            | Launch dmenu script hub                |
 | Super + Shift + n    | Send previous notification             |
 | and more!            | See ~/.config/qtile/config.py          |
@@ -82,7 +83,7 @@ stow .
 | theme-changer  | Theme changer (DoomOne, CatppuccinMocha, Dracula, Gruvbox, RosePine, Wal) |
 | yt-download    | Download videos or audio using yt-dlp                                     |
 
-Some scripts will require these directories:
+Some scripts will only work on nixos and require these directories:
 
 * ~/Pictures/Wallpapers
 * ~/Pictures/Screenshots
