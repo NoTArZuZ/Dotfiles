@@ -1,21 +1,18 @@
-format = '''
-[ $username at $hostname $shell$directory$cmd_duration$git_branch$git_commit$git_status$time](bold white)
-[ $character$status](bold white)'''
+
+format = '''[ $username$directory$character$status](bold white)'''
+
+right_format = '''[$time $cmd_duration$git_branch$git_commit$git_status ](bold white)'''
 
 [character]
-success_symbol = '[➜](bold green)'
-error_symbol = '[➜](bold red)'
-vimcmd_symbol = '[➜](bold cyan)'
-vimcmd_replace_symbol = '[➜](bold yellow)'
-vimcmd_replace_one_symbol = '[➜](bold yellow)'
-vimcmd_visual_symbol = '[➜](bold purple)'
+success_symbol = '[ ](bold black)'
+error_symbol = '[ ](bold black)'
 
 [username]
-format = "[$user](bold blue)"
+format = "[ [ $user ](bold black bg:green)](bold green)"
 show_always = true
 
 [directory]
-style = "bold underline italic blue"
+format = "[ [$path](bold white bg:black) ](bold green bg:black)"
 
 [hostname]
 ssh_only = false
@@ -30,11 +27,6 @@ style = "bold red"
 
 [status]
 disabled = false
-
-[shell]
-# disabled = false
-disabled = true
-format = "via [$indicator](bold cyan)"
 
 [git_commit]
 only_detached = false
