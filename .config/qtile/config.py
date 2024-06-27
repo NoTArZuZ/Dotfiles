@@ -201,7 +201,7 @@ screens = [
                   foreground = colors[3],
                   partition = '/',
                   format = '{uf}{m} free',
-                  fmt = 'Disk: {}',
+                  fmt = '󱛟  Disk: {}',
                   visible_on_warn = False,
                     decorations=[
                         BorderDecoration(
@@ -214,7 +214,7 @@ screens = [
                 widget.Memory(
                     foreground = colors[4],
                     format = '{MemUsed: .0f}{mm}',
-                    fmt = 'Ram: {}',
+                    fmt = '   Ram: {}',
                     decorations=[
                         BorderDecoration(
                             colour = colors[4],
@@ -224,7 +224,7 @@ screens = [
                 ),
                 widget.Spacer(length = 8),
                 widget.CPU(
-                  format = 'Cpu: {load_percent}%',
+                  format = '   Cpu: {load_percent}%',
                   foreground = colors[5],  
                     decorations=[
                         BorderDecoration(
@@ -236,7 +236,7 @@ screens = [
                 widget.Spacer(length = 8),
                 widget.PulseVolume(
                     foreground = colors[7],
-                    fmt = 'Vol: {}',
+                    fmt = '   Vol: {}',
                     decorations=[
                         BorderDecoration(
                             colour = colors[7],
@@ -246,7 +246,7 @@ screens = [
                 ),
                 widget.Spacer(length = 8),
                 widget.Clock(
-                    format="%Y-%m-%d %a %I:%M %p",
+                    format="󰥔  %Y-%m-%d %a %I:%M %p",
                     foreground = colors[8],
                     decorations=[
                         BorderDecoration(
