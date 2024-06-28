@@ -24,4 +24,4 @@ scrdir="$HOME/.config/qtile/scripts/" # / at the end
 dotdir="$HOME/Dotfiles/.config/" # / at the end
 nixcfgdir="$HOME/Dotfiles/nix-cfg/" # / at the end
 # themes
-themes="DoomOne\nCatppuccinMocha\nGruvbox\nEverforest\nDracula\nWal"
+themes="DoomOne\nCatppuccinMocha\nGruvbox\nEverforest\nNord\nDracula\nWal"

@@ -1,0 +1,46 @@
+*background: #2e3440
+*foreground: #d8dee9
+
+! Black + DarkGrey
+*color0:  #3b4252
+*color8:  #4c566a
+
+! DarkRed + Red
+*color1:  #bf616a
+*color9:  #bf616a
+
+! DarkGreen + Green
+*color2:  #a3be8c
+*color10: #a3be8c
+
+! DarkYellow + Yellow
+*color3:  #ebcb8b
+*color11: #ebcb8b
+
+! DarkBlue + Blue
+*color4:  #81a1c1
+*color12: #81a1c1
+
+! DarkMagenta + Magenta
+*color5:  #b48ead
+*color13: #b48ead
+
+! DarkCyan + Cyan
+*color6:  #88c0d0
+*color14: #88c0d0
+
+! LightGrey + White
+*color7:  #e5e9f0
+*color15: #eceff4
+
+dmenu.background: #2e3440
+dmenu.selbackground: #b48ead
+dmenu.foreground: #d8dee9
+dmenu.selforeground: #3b4252
+dmenu.selhlbackground: #000000
+dmenu.selhlforeground: #a3be8c
+dmenu.hlbackground: #000000
+dmenu.hlforeground: #a3be8c
+dmenu.midbackground: #3b4252
+dmenu.midforeground: #e5e9f0
+dmenu.bordercolor: #b48ead

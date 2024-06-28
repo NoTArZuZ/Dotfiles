@@ -199,6 +199,8 @@
   dracula-theme
   # Qogir-Dark
   qogir-theme
+  # Nordic
+  nordic
 # icon themes
   # Papirus-Dark
   papirus-icon-theme
