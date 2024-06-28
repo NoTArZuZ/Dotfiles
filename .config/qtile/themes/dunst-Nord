@@ -13,14 +13,14 @@ progress_bar_frame_width = 0
 transparency = 3
 horizontal_padding = 11
 frame_width = 6
-frame_color = "#282c34"
+frame_color = "#3b4252"
 gap_size = 8
 separator_color = "#404859"
 idle_threshold = 120
 
 font = "Ubuntu Bold 10"
 
-format = "<span size='x-large' font_desc='Ubuntu Font 9' weight='bold' foreground='#bbc2cf'>%s</span>\n%b"
+format = "<span size='x-large' font_desc='Ubuntu Font 9' weight='bold' foreground='#f9f9f9'>%s</span>\n%b"
 
 show_age_threshold = 60
 icon_position = left
@@ -50,18 +50,18 @@ corner_radius = 8
 
 [urgency_low]
 timeout = 3
-background = "#282c34"
-foreground = "#bbc2cf"
-highlight = "#c678dd"
+background = "#3b4252"
+foreground = "#f9f9f9"
+highlight = "#f48ee8"
 
 [urgency_normal]
 timeout = 6
-background = "#282c34"
-foreground = "#bbc2cf"
-highlight = "#c678dd"
+background = "#3b4252"
+foreground = "#f9f9f9"
+highlight = "#f48ee8"
 
 [urgency_critical]
 timeout = 0
-background = "#282c34"
-foreground = "#bbc2cf"
-highlight = "#c678dd"
+background = "#3b4252"
+foreground = "#f9f9f9"
+highlight = "#f48ee8"

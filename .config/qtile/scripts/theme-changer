@@ -40,6 +40,10 @@ gtktheming() {
       choosegtktheme="Dracula"
       chooseicontheme="Dracula"
     ;;
+    "Nord")
+      choosegtktheme="Nordic"
+      chooseicontheme="Papirus-Dark"
+    ;;
     "Everforest")
       choosegtktheme="Qogir-Dark"
       chooseicontheme="Qogir"

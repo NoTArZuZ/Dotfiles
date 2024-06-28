@@ -35,7 +35,7 @@
 
 dmenu.background: #282c34
 dmenu.selbackground: #c678dd
-dmenu.foreground: #bbc2c2
+dmenu.foreground: #bbc2cf
 dmenu.selforeground: #1c1f24
 dmenu.selhlbackground: #000000
 dmenu.selhlforeground: #98be65
