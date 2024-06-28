@@ -2,15 +2,15 @@
 
 NoTArZuZ's dotfiles for NixOS 24.05 Heavily inspired by DistroTube.
 
-<div align="center"><tr>Doom One</tr>
-<img src="https://cdn.discordapp.com/attachments/693827752532377641/1254125256986066974/1719077065.png?ex=66785aa9&is=66770929&hm=e26866ff54ba3db3bb5f012700552b35bec4c54f121cc78c1e789308d484e646&"/></div>
-
-<div align="center"><table><tr><td>Gruvbox</td><td>Catppuccin Mocha</td></tr><tr><td>
-<img src="https://cdn.discordapp.com/attachments/693827752532377641/1254125255220265001/1719076898.png?ex=66785aa9&is=66770929&hm=b4806c915d1c2721d196b658a3a1e76572c09a9feaf0444a48b74effa9362184&"/></td><td>
-<img src="https://cdn.discordapp.com/attachments/693827752532377641/1254125255690162186/1719076934.png?ex=66785aa9&is=66770929&hm=55646c203c906c73e7ad89922f80d9c5c474575d75b4c966869241b02f54c99a&"/></td></tr>
+<div align="center"><table><tr><td>DoomOne</td><td>Nord</td></tr><tr><td>
+<img src="https://cdn.discordapp.com/attachments/836500386390605846/1256301450225778708/1719595604.png?ex=66804566&is=667ef3e6&hm=20a66d6150142dcf49b7b6674882fe0fc2acbb7b57b0bc000fb05b831e33250c&"/></td><td>
+<img src="https://cdn.discordapp.com/attachments/836500386390605846/1256301449479065600/1719595571.png?ex=66804566&is=667ef3e6&hm=7c8cf9cdafe24c08201240b9b32ffbf8629f9128f2e1a8fc1c7143ab152709ad&"/></td></tr>
+<tr><td>Gruvbox</td><td>Catppuccin Mocha</td></tr><tr><td>
+<img src="https://cdn.discordapp.com/attachments/836500386390605846/1256301451282743367/1719595675.png?ex=66804566&is=667ef3e6&hm=edd7892bb6c7dd3bf03624f768fbed6ace68ffadfcf1dd53eb8c9f3564f380e5&"/></td><td>
+<img src="https://cdn.discordapp.com/attachments/836500386390605846/1256301450821107732/1719595635.png?ex=66804566&is=667ef3e6&hm=6d577e265226d7ed07393da74dc3fb79a13d34daf5dbda616a5b4fc77114cb4e&"/></td></tr>
 <tr><td>Dracula</td><td>Everforest</td></tr><tr><td>
-<img src="https://cdn.discordapp.com/attachments/693827752532377641/1254125256134623345/1719076979.png?ex=66785aa9&is=66770929&hm=b614f1ec6bef5d815ec1ed1563fef878baddd3bad912c04a86e382993e75f566&"/></td><td>
-<img src="https://cdn.discordapp.com/attachments/836500386390605846/1254176168782073947/1719089096.png?ex=66788a14&is=66773894&hm=5efd6fa5e3552419b08f189b6de150cf67af8fcb710f2fa007cbbe2819f672d3&"/></td></tr>
+<img src="https://cdn.discordapp.com/attachments/836500386390605846/1256301452305891510/1719595744.png?ex=66804567&is=667ef3e7&hm=4e448d601f43cbf2092f10a389f7525c34c1c6d2e7306976e26dc0050f5cc857&"/></td><td>
+<img src="https://cdn.discordapp.com/attachments/836500386390605846/1256301451823677542/1719595704.png?ex=66804567&is=667ef3e7&hm=53764e9890ef8c51d3ad70ebfb3c5ed20934ccd9af6dd91d619fa6808d1175bc&"/></td></tr>
 </table></div>
 
 > [!WARNING]

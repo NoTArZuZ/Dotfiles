@@ -19,5 +19,5 @@ inherits = 'nord'
 'variable.parameter' = 'nord15'
 
 [palette]
-nord0 = '#252933'
+nord0 = '#2e3440'
 nord4 = '#C0C5CF'
