@@ -22,6 +22,5 @@ scrshotdir="$HOME/Pictures/Screenshots"
 notedir="$HOME/Notes/" # / at the end
 scrdir="$HOME/.config/qtile/scripts/" # / at the end
 dotdir="$HOME/Dotfiles/.config/" # / at the end
-nixcfgdir="$HOME/Dotfiles/nix-cfg/" # / at the end
 # themes
 themes="DoomOne\nCatppuccinMocha\nGruvbox\nEverforest\nNord\nDracula\nWal"
