@@ -103,6 +103,9 @@
   services.xserver.windowManager.qtile.enable = true;
   services.xserver.windowManager.qtile.extraPackages = p: with p; [ qtile-extras ];
 
+  # Enable System76 Scheduler
+  services.system76-scheduler.enable = true;
+
   # Configure keymap in X11
   services.xserver = {
     layout = "us";
