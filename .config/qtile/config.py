@@ -69,6 +69,8 @@ keys = [
     # Reload and Shutdown Qtile
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
+    # Toggle Bar
+    Key([mod, "shift"], "b", lazy.hide_show_bar(position="top"), desc="Toggle Bar"),
     # Spawn Programs
     Key([mod], "Return", lazy.spawn("st"), desc="Launch terminal"),
     Key([mod], "e", lazy.spawn("st fish -c yazi"), desc="Launch yazi"),
@@ -286,7 +288,9 @@ bring_front_click = False
 floats_kept_above = True
 cursor_warp = False
 floating_layout = layout.Floating(
-    border_width = 0,
+    border_width = 2,
+    border_focus = colors[6],
+    border_normal = colors[0],
     float_rules=[
         # Run the utility of `xprop` to see the wm class and name of an X client.
         *layout.Floating.default_float_rules,

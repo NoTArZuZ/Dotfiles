@@ -52,6 +52,7 @@ stow --adopt .
 | Super + w            | Kill focused window                    |
 | Super + Ctrl + q     | Shutdown qtile                         |
 | Super + Ctrl + r     | Reload qtile config                    |
+| Super + Shift + b    | Toggle bar                             |
 | Super + Tab          | Cycle qtile layouts                    |
 | Super + 1-5          | Switch to workspace                    |
 | Super + Shift + 1-5  | Move window to workspace               |
